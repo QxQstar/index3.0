@@ -68,7 +68,7 @@ body{
 	overflow: hidden;
 	top: 60px;
 	right: 0;
-	background-color:rgba(0,0,0,0.5);
+	background-color:rgba(0,0,0,0.9);
 }
 .outerList .inter li{
 	margin-top: 30px;
@@ -470,6 +470,7 @@ body{
 .myRow6 .customer .imgHeader{
 	margin: 0;
 	width: 100%;
+	vertical-align: middle;
 }
 .myRow6 .designer .col_2 .info{
 	height: 100%;
@@ -529,6 +530,9 @@ body{
 .myRow6 .designer .col_3 .info .info,
 .myRow6 .customer .col_3 .info .info{
 	background-color: #fff;
+}
+.myRow6 .customer .col_3 .info .img{
+	position: relative;
 }
 .myRow6 .designer .col_3 .articleTile,
 .myRow6 .customer .col_3 .articleTile{
@@ -615,16 +619,46 @@ body{
 	padding-top: 10px;
 }
 .myRow6 .customer .col_2 .col_2Inter_1 .info{
+	position: relative;
 	background: url(../img/customer1.jpg) no-repeat;
 	background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
 	-webkit-background-size: 100% 100%;
 }
 .myRow6 .customer .col_2 .col_2Inter_2 .info{
+	position: relative;
 	background: url(../img/customer2.jpg) no-repeat;
 	background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
 	-webkit-background-size: 100% 100%;
+}
+.myRow6 .customer .col_2 .info .mask,
+.myRow6 .customer .col_3 .info .mask
+{
+	position: absolute;
+	top: 0;
+	left:0;
+	right: 0;
+	height: 100%;
+	opacity: 0;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.7);
+}
+.myRow6 .customer .col_2 .mask .col_2brife,
+.myRow6 .customer .col_3 .mask .col_3brife{
+	margin-top: 17%;
+}
+.myRow6 .customer .col_2 .mask span,
+.myRow6 .customer .col_3 .mask span{
+	padding: 0 20px;
+	display: block;
+	color: #C4C3C3;
+	font-size: 13px;
+	line-height: 1.75;
+	text-align: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .myRow6 .customer .info .articleTile{
 	padding: 0;

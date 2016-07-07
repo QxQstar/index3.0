@@ -116,7 +116,7 @@ function callBackOver(event){
 function changeHeight(element,timer,flag){
 	var totalHeight = 160;
 	var inverHeight = 10;
-	var inverTimer = 10;
+	var inverTimer = 20;
 	clearTimeout(timer);
 	//当鼠标移入时清除让内部ul长度减小的定时器，保证鼠标移入后
 	//内部ul长度立即增加
@@ -145,12 +145,6 @@ function setListHeight(){
 	var list = document.getElementById('list');
 	var myRow2 = document.getElementById('myRow2');
 	var myRow3 = document.getElementById('myRow3');
-	// var myRow2Img = document.getElementById('myRow2Img');
-	// var myRow3Img = document.getElementById('myRow3Img');
-	// var myRow2Height = myRow2Img.offsetHeight;
-	// var myRow3Height = myRow3Img.offsetHeight;
-	// myRow2.style.height = myRow2Height + 'px';
-	// myRow3.style.height = myRow3Height + 'px';
 	var imgItem = list.getElementsByTagName('img')[0];
 	var height = imgItem.offsetHeight;
 	var list = document.getElementById('list');
@@ -174,13 +168,13 @@ function btnClick(){
 		if(target.nodeName.toLowerCase() == 'div'){
 			switch(target.id){
 				case 'pre': if(index == 1){
-						index = 3;
+						index = 4;
 					}else{
 						--index;
 					}
 					anmitate();
 					break;
-				case 'next':if(index == 3){
+				case 'next':if(index == 4){
 					index = 1;
 					}else{
 						++index;
@@ -228,6 +222,7 @@ function anmitate(){
 	for(var i = 0;i<imgsLen;i++){
 		decline(imgs[i],inverTime,inverOpacity);
 	}
+	//incline(imgs[index - 1],inverTime,inverOpacity);
 	var go = function(){
 		var opacityed = parseFloat(imgs[index - 1].style.opacity);
 		if(!opacityed)opacityed = 0;
@@ -243,6 +238,21 @@ function anmitate(){
 	};
 	go();
 }
+// function incline(element,inverTime,inverOpacity){
+// 	var opacityed = parseFloat(element.style.opacity);
+// 	if(!opacityed)opacityed = 0;
+// 	if(opacityed < 1){
+// 		var newOpacity = opacityed + inverOpacity;
+// 		if ( newOpacity > 1) {
+// 			element.style.opacity = 1;
+// 		}else{
+// 			element.style.opacity = newOpacity;
+// 		}
+// 		setTimeout(function(){
+// 			incline(element,inverTime,inverOpacity);
+// 		},inverTime);
+// 	}
+// }
 //自动切换函数
 function play() {
 	timer = setTimeout(function () {
@@ -276,6 +286,77 @@ function throttle(method,context){
 	method.Tid = setTimeout(method,70);
 }
 // 轮播的函数结束
+//添加蒙层
+function getInfoMask(){
+	var info1 = document.getElementById('mask1');
+	var info2 = document.getElementById('mask2');
+	var img1 = document.getElementById('imgmask1');
+	var img2 = document.getElementById('imgmask2');
+	untilEvent.addEvent(img1,'mouseover',addMask);
+	untilEvent.addEvent(img2,'mouseover',addMask);
+	untilEvent.addEvent(info1,'mouseover',addMask);
+	untilEvent.addEvent(info2,'mouseover',addMask);
+	untilEvent.addEvent(img1,'mouseout',deleMask);
+	untilEvent.addEvent(img2,'mouseout',deleMask);
+	untilEvent.addEvent(info1,'mouseout',deleMask);
+	untilEvent.addEvent(info2,'mouseout',deleMask);
+}
+//判目标元素和相关元素的关系
+function IsChild(tarEle,relEle){
+	var flag = true;
+	if(relEle){
+		var parented = relEle.parentNode;
+		while(parented !== null){
+			if(parented === tarEle && parented.className == 'mask'|| tarEle.nodeName.toLowerCase() == 'span' && relEle.className == 'mask' || tarEle.nodeName.toLowerCase() == 'span' && relEle.nodeName.toLowerCase() == 'span'){
+				flag = false;
+				break;
+			}else{
+				parented = parented.parentNode;
+			}
+		}
+	}
+	return flag;
+}
+function deleMask(event){
+	var event = untilEvent.getEvent(event);
+	var target = untilEvent.getTarget(event);
+	var relatedTarget = untilEvent.getRelated(event);
+	var flag = IsChild(target,relatedTarget);
+	if(flag){
+		if(target.nodeName.toLowerCase() == 'div'){
+			target.style.opacity = 0;
+		}else{
+			target.parentNode.style.opacity = 0;
+		}
+	}
+}
+function addMask(event){
+	var event = untilEvent.getEvent(event);
+	var target = untilEvent.getTarget(event);
+	var whole = 200;
+	var inverTime = 10;
+	var inverOpacity = 1/(whole/inverTime);
+	if(target.nodeName.toLowerCase() == 'div'){
+		go(target);
+	}else{
+		go(target.parentNode);
+	}
+	function go(element){
+		var opacityed = parseFloat(element.style.opacity);
+		if(!opacityed) opacityed = 0;
+		if(opacityed < 1){
+			var newOpacity = opacityed + inverOpacity;
+			if( newOpacity>= 1){
+				element.style.opacity = 1;
+			}else{
+				element.style.opacity = newOpacity;
+			}
+			setTimeout(function(){
+				go(element);
+			},inverTime);
+		}
+	}
+}
 untilEvent.addEvent(window,'load',scrollEvent);
 untilEvent.addEvent(window,'load',setListHeight);
 untilEvent.addEvent(window,'load',setLiIndex);
@@ -283,3 +364,4 @@ untilEvent.addEvent(window,'load',btnClick);
 untilEvent.addEvent(window,'load',play);
 untilEvent.addEvent(window,'load',getWarp);
 untilEvent.addEvent(window,'load',getOuter);
+untilEvent.addEvent(window,'load',getInfoMask);
