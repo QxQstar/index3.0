@@ -32,7 +32,7 @@ var untilEvent = {
 };
 //下面这四个元素用于表示四个定时器的标识，最开始我只使用两个定时器，当快速移动时
 //动画会乱。
-var timeDec1,timeAdd1,timeAdd2,timeDec2;
+// var timeDec1,timeAdd1,timeAdd2,timeDec2;
 function getOuter(){
 	var outer = document.getElementById('outer');
 	untilEvent.addEvent(outer,'mouseover',callBackOver);
@@ -65,78 +65,77 @@ function callBackOut(event){
 		}while(parented !== null);
 	}
 	if(!flag1){
-		var str1 = 'flag1';
-		changeHeightDec(inter1,timeAdd1,str1);
+		//changeHeightDec(inter1);
+		$(inter1).animate({height:'0px'},10);
 	}
 	if(!flag2){
-		var str2 = 'flag2';
-		changeHeightDec(inter2,timeAdd2,str2);
+		//changeHeightDec(inter2);
+		$(inter2).animate({height:'0px'},10);
 	}
 }
-function changeHeightDec(element,timer,flag){
-	var offHeight = 70;
-	var inverTimer = 10;
-	clearTimeout(timer);
-	change();
-	function change(){
-		var height = parseInt(element.style.height);
-		if(height > 0){
-			if(height%offHeight){
-				//当鼠标快速移动，确保height能够被offheight整除
-				//如果不能整除，内部ul的高度可能不能减小到零
-				height = height-height%offHeight;
-			}
-			if(height >= offHeight){
-			element.style.height = height - offHeight +'px';
-			}else{
-				element.style.height = 0+'px';
-			}
-			if(flag === 'flag1'){
-			 timeDec1= setTimeout(change,inverTimer);
-			}else{
-				timeDec2 = setTimeout(change,inverTimer);
-			}
-		}
-	}
+function changeHeightDec(element){
+	$(element).animate({height:"0px"},10);
+	// change();
+	// function change(){
+	// 	var height = parseInt(element.style.height);
+	// 	if(height > 0){
+	// 		if(height%offHeight){
+	// 			height = height-height%offHeight;
+	// 		}
+	// 		if(height >= offHeight){
+	// 		element.style.height = height - offHeight +'px';
+	// 		}else{
+	// 			element.style.height = 0+'px';
+	// 		}
+	// 		if(flag === 'flag1'){
+	// 		 timeDec1= setTimeout(change,inverTimer);
+	// 		}else{
+	// 			timeDec2 = setTimeout(change,inverTimer);
+	// 		}
+	// 	}
+	// }
 }
 function callBackOver(event){
+	var totalHeight = 160;
 	var event = untilEvent.getEvent(event);
 	var target = untilEvent.getTarget(event);
 	var inter1 = document.getElementById('inter1');
 	var inter2 = document.getElementById('inter2');
 	if(target.id == 'outerList1' || target.id == "link1"){
-		var str1 = "flag1";
-		changeHeight(inter1,timeDec1,str1);
+		//changeHeight(inter1);
+		$(inter1).animate({height:totalHeight + "px"},300);
 	}
 	if(target.id == 'outerList2' || target.id == 'link2'){
-		var str2 = "flag2";
-		changeHeight(inter2,timeDec2,str2);
+		//changeHeight(inter2);
+		$(inter2).animate({height:totalHeight + 'px'},300);
 	}
 }
-function changeHeight(element,timer,flag){
-	var totalHeight = 160;
-	var inverHeight = 10;
-	var inverTimer = 20;
-	clearTimeout(timer);
+function changeHeight(element){
+	 var totalHeight = 160;
+	// var inverHeight = 10;
+	// var inverTimer = 20;
+	// clearTimeout(timer);
+	$(element).animate({height:totalHeight + 'px'},300);
 	//当鼠标移入时清除让内部ul长度减小的定时器，保证鼠标移入后
 	//内部ul长度立即增加
-	change();
-	function change(){
-		var height = parseInt(element.style.height);
-		if(!height) height = 0;
-		if(height < totalHeight){
-			if(height + inverHeight > totalHeight){
-				element.style.height = totalHeight + "px";
-			}else{
-				element.style.height = height + inverHeight +'px';
-			}
-			if(flag === 'flag1'){
-				timeAdd1 = setTimeout(change,inverTimer);
-				}else{
-					timeAdd2 = setTimeout(change,inverTimer);
-				}
-		}
-	}
+	//change();
+	// function change(){
+	// 	var height = parseInt(element.style.height);
+	// 	if(!height) height = 0;
+	// 	if(height < totalHeight){
+	// 		if(height + inverHeight > totalHeight){
+	// 			element.style.height = totalHeight + "px";
+	// 		}else{
+	// 			element.style.height = height + inverHeight +'px';
+	// 		}
+	// 		if(flag === 'flag1'){
+	// 			timeAdd1 = setTimeout(change,inverTimer);
+	// 			}else{
+	// 				timeAdd2 = setTimeout(change,inverTimer);
+	// 			}
+	// 	}
+	// }
+	
 }
 // 轮播的函数开始
 //设置class为list的高度,因为图片的position为absolute所以.list元素的高度为零
@@ -222,7 +221,6 @@ function anmitate(){
 	for(var i = 0;i<imgsLen;i++){
 		decline(imgs[i],inverTime,inverOpacity);
 	}
-	//incline(imgs[index - 1],inverTime,inverOpacity);
 	var go = function(){
 		var opacityed = parseFloat(imgs[index - 1].style.opacity);
 		if(!opacityed)opacityed = 0;
@@ -238,21 +236,6 @@ function anmitate(){
 	};
 	go();
 }
-// function incline(element,inverTime,inverOpacity){
-// 	var opacityed = parseFloat(element.style.opacity);
-// 	if(!opacityed)opacityed = 0;
-// 	if(opacityed < 1){
-// 		var newOpacity = opacityed + inverOpacity;
-// 		if ( newOpacity > 1) {
-// 			element.style.opacity = 1;
-// 		}else{
-// 			element.style.opacity = newOpacity;
-// 		}
-// 		setTimeout(function(){
-// 			incline(element,inverTime,inverOpacity);
-// 		},inverTime);
-// 	}
-// }
 //自动切换函数
 function play() {
 	timer = setTimeout(function () {
@@ -286,76 +269,12 @@ function throttle(method,context){
 	method.Tid = setTimeout(method,70);
 }
 // 轮播的函数结束
-//添加蒙层
 function getInfoMask(){
-	var info1 = document.getElementById('mask1');
-	var info2 = document.getElementById('mask2');
-	var img1 = document.getElementById('imgmask1');
-	var img2 = document.getElementById('imgmask2');
-	untilEvent.addEvent(img1,'mouseover',addMask);
-	untilEvent.addEvent(img2,'mouseover',addMask);
-	untilEvent.addEvent(info1,'mouseover',addMask);
-	untilEvent.addEvent(info2,'mouseover',addMask);
-	untilEvent.addEvent(img1,'mouseout',deleMask);
-	untilEvent.addEvent(img2,'mouseout',deleMask);
-	untilEvent.addEvent(info1,'mouseout',deleMask);
-	untilEvent.addEvent(info2,'mouseout',deleMask);
-}
-//判目标元素和相关元素的关系
-function IsChild(tarEle,relEle){
-	var flag = true;
-	if(relEle){
-		var parented = relEle.parentNode;
-		while(parented !== null){
-			if(parented === tarEle && parented.className == 'mask'|| tarEle.nodeName.toLowerCase() == 'span' && relEle.className == 'mask' || tarEle.nodeName.toLowerCase() == 'span' && relEle.nodeName.toLowerCase() == 'span'){
-				flag = false;
-				break;
-			}else{
-				parented = parented.parentNode;
-			}
-		}
-	}
-	return flag;
-}
-function deleMask(event){
-	var event = untilEvent.getEvent(event);
-	var target = untilEvent.getTarget(event);
-	var relatedTarget = untilEvent.getRelated(event);
-	var flag = IsChild(target,relatedTarget);
-	if(flag){
-		if(target.nodeName.toLowerCase() == 'div'){
-			target.style.opacity = 0;
-		}else{
-			target.parentNode.style.opacity = 0;
-		}
-	}
-}
-function addMask(event){
-	var event = untilEvent.getEvent(event);
-	var target = untilEvent.getTarget(event);
-	var whole = 200;
-	var inverTime = 10;
-	var inverOpacity = 1/(whole/inverTime);
-	if(target.nodeName.toLowerCase() == 'div'){
-		go(target);
-	}else{
-		go(target.parentNode);
-	}
-	function go(element){
-		var opacityed = parseFloat(element.style.opacity);
-		if(!opacityed) opacityed = 0;
-		if(opacityed < 1){
-			var newOpacity = opacityed + inverOpacity;
-			if( newOpacity>= 1){
-				element.style.opacity = 1;
-			}else{
-				element.style.opacity = newOpacity;
-			}
-			setTimeout(function(){
-				go(element);
-			},inverTime);
-		}
-	}
+	$("#mask1,#mask2,#imgmask1,#imgmask2").hover(function(){
+		$(this).fadeTo(300,1);
+	},function(){
+		$(this).fadeTo(300,0);
+	});
 }
 untilEvent.addEvent(window,'load',scrollEvent);
 untilEvent.addEvent(window,'load',setListHeight);
