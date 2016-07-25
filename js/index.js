@@ -245,9 +245,8 @@ function play() {
 			++index;
 		}
 		anmitate();
-     	play();
-     	// 
- }, 3000);
+		play();
+ }, 4000);
 }
 //停止切换函数,当鼠标点击了左箭头或者右箭头时会取消自动切换，当鼠标从箭头上移开，又开始自动切换
 function stop() {
@@ -276,7 +275,7 @@ function getInfoMask(){
 		$(this).fadeTo(300,0);
 	});
 }
-untilEvent.addEvent(window,'load',scrollEvent);
+//untilEvent.addEvent(window,'load',scrollEvent);
 untilEvent.addEvent(window,'load',setListHeight);
 untilEvent.addEvent(window,'load',setLiIndex);
 untilEvent.addEvent(window,'load',btnClick);
