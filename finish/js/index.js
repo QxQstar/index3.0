@@ -16,13 +16,10 @@ var untilEvent = {
 	},
 	getRelated:function(event){
 		if(event.relatedTarget){
-			//兼容DOM的浏览器将相关元素保持在relatedTarget属性中
 			return event.relatedTarget;
 		}else if(event.toElement){
-			//在IE浏览器中mouseout事件的相关元素保存在toElement属性中
 			return event.toElement;
 		}else if(event.fromElement){
-			//在IE浏览器中mouseover事件的相关元素保持在fromElement属性中
 			return event.fromElement;
 		}else{
 			return null;
@@ -30,18 +27,11 @@ var untilEvent = {
 	}
 
 };
-//下面这四个元素用于表示四个定时器的标识，最开始我只使用两个定时器，当快速移动时
-//动画会乱。
-// var timeDec1,timeAdd1,timeAdd2,timeDec2;
 function getOuter(){
 	var outer = document.getElementById('outer');
 	untilEvent.addEvent(outer,'mouseover',callBackOver);
 	untilEvent.addEvent(outer,'mouseout',callBackOut);
 }
-//mouseout事件：当鼠标从一个元素移入另一个元素时在鼠标离开的那个元素
-//上触发，获得鼠标的元素可能在失去鼠标元素的外部也可能在失去鼠标元素的
-//内部.所以需要判断mouseout事件的相关元素是否为外部li（即id为outerList或id为outerList2）元素
-//的子孙元素，如果是子孙元素，则内部无序列表无须收起。
 function callBackOut(event){
 	var event = untilEvent.getEvent(event);
 	var relatedTarget = untilEvent.getRelated(event);
@@ -65,77 +55,29 @@ function callBackOut(event){
 		}while(parented !== null);
 	}
 	if(!flag1){
-		//changeHeightDec(inter1);
 		$(inter1).animate({height:'0px'},10);
 	}
 	if(!flag2){
-		//changeHeightDec(inter2);
 		$(inter2).animate({height:'0px'},10);
 	}
 }
-function changeHeightDec(element){
-	$(element).animate({height:"0px"},10);
-	// change();
-	// function change(){
-	// 	var height = parseInt(element.style.height);
-	// 	if(height > 0){
-	// 		if(height%offHeight){
-	// 			height = height-height%offHeight;
-	// 		}
-	// 		if(height >= offHeight){
-	// 		element.style.height = height - offHeight +'px';
-	// 		}else{
-	// 			element.style.height = 0+'px';
-	// 		}
-	// 		if(flag === 'flag1'){
-	// 		 timeDec1= setTimeout(change,inverTimer);
-	// 		}else{
-	// 			timeDec2 = setTimeout(change,inverTimer);
-	// 		}
-	// 	}
-	// }
-}
 function callBackOver(event){
-	var totalHeight = 180;
+	var totalHeight = 170;
+	// if($(window).width() >= 768){
+	// 	totalHeight = 170;
+	// }else{
+	// 	totalHeight = 100;
+	// }
 	var event = untilEvent.getEvent(event);
 	var target = untilEvent.getTarget(event);
 	var inter1 = document.getElementById('inter1');
 	var inter2 = document.getElementById('inter2');
 	if(target.id == 'outerList1' || target.id == "link1"){
-		//changeHeight(inter1);
 		$(inter1).animate({height:totalHeight + "px"},300);
 	}
 	if(target.id == 'outerList2' || target.id == 'link2'){
-		//changeHeight(inter2);
 		$(inter2).animate({height:totalHeight + 'px'},300);
 	}
-}
-function changeHeight(element){
-	 var totalHeight = 160;
-	// var inverHeight = 10;
-	// var inverTimer = 20;
-	// clearTimeout(timer);
-	$(element).animate({height:totalHeight + 'px'},300);
-	//当鼠标移入时清除让内部ul长度减小的定时器，保证鼠标移入后
-	//内部ul长度立即增加
-	//change();
-	// function change(){
-	// 	var height = parseInt(element.style.height);
-	// 	if(!height) height = 0;
-	// 	if(height < totalHeight){
-	// 		if(height + inverHeight > totalHeight){
-	// 			element.style.height = totalHeight + "px";
-	// 		}else{
-	// 			element.style.height = height + inverHeight +'px';
-	// 		}
-	// 		if(flag === 'flag1'){
-	// 			timeAdd1 = setTimeout(change,inverTimer);
-	// 			}else{
-	// 				timeAdd2 = setTimeout(change,inverTimer);
-	// 			}
-	// 	}
-	// }
-	
 }
 // 轮播的函数开始
 //设置class为list的高度,因为图片的position为absolute所以.list元素的高度为零
@@ -261,6 +203,8 @@ function getWarp(){
 function scrollEvent(){
 	untilEvent.addEvent(window,"resize",function(){
 		throttle(setListHeight);
+		throttle(collapse);
+		throttle(checkWidth);
 	});
 }
 function throttle(method,context){
@@ -268,12 +212,76 @@ function throttle(method,context){
 	method.Tid = setTimeout(method,70);
 }
 // 轮播的函数结束
-function getInfoMask(){
-	$("#mask1,#mask2,#imgmask1,#imgmask2").hover(function(){
+function discussMask(){
+	$(".customer .word").hover(function(){
 		$(this).fadeTo(300,1);
 	},function(){
 		$(this).fadeTo(300,0);
 	});
+}
+function collapse(){
+	var p = $(".customer .word #p");
+	var offsetWidth = p.width();
+	var offsetHeight = p.height();
+	var fontSize = parseInt(p.css('font-size'));
+	var lettSpac = parseInt(p.css('letter-spacing'));
+	var num = parseInt(offsetWidth/(fontSize + 2*lettSpac) * offsetHeight/(fontSize*1.5));
+	$(".customer .word p").each(function(index,ele){
+		var valueL = $(ele)[0].innerHTML.length;
+		if(valueL > num){
+			$(ele)[0].innerHTML = $(ele)[0].innerHTML.slice(0,num) + "...";
+		}
+	});
+}
+// function checkWidth(){
+// 	var width = $(window).width();
+// 	if(width >= 768){
+// 		$('.cupItem #chunse').attr('src',"../img/纯色.png");
+// 	}else{
+// 		$('.cupItem #chunse').attr('src',"../img/纯色2.png");
+// 	}
+// }
+function smallScreenList(){
+	var state = false;
+	// $('.smallScreen .list span').click(function(){
+	// 	state = true;
+	// 	$('.smallScreen .list span').removeClass('cur').addClass('hide');
+	// 	$(this).addClass("cur").next('ul').removeClass("hide");
+	// 	spread(state);
+	// });
+	$(document).click(function(event){
+		var state = false;
+		var target = event.target;
+		var targetName = target.nodeName.toLowerCase();
+		if(targetName == 'span' && $(target).parent()[0].nodeName.toLowerCase() == 'li'){
+			
+			if($(target).attr('class').indexOf('cur') >= 0){
+				state = false;
+				$('.smallScreen .list span').prev('div').removeClass('bar');
+				$('.smallScreen .list span').removeClass('cur').next().addClass('hide');
+			}else{
+				state = true;
+				$('.smallScreen .list span').prev('div').removeClass('bar');
+				$('.smallScreen .list span').removeClass('cur').next().addClass('hide');
+				$(target).addClass("cur").next().removeClass("hide");
+				$(target).prev().addClass('bar');
+			}
+			
+			spread(state);
+		}else{
+			state = false;
+			$('.smallScreen .list span').prev('div').removeClass('bar');
+			$('.smallScreen .list span').removeClass('cur').next().addClass('hide');
+			spread(state);
+		}
+	});
+}
+function spread(state){
+	if(state){
+		$('.smallScreen').animate({height:'80px'},500);
+	}else{
+		$('.smallScreen').animate({height:'20px'},500);
+	}
 }
 untilEvent.addEvent(window,'load',scrollEvent);
 untilEvent.addEvent(window,'load',setListHeight);
@@ -282,4 +290,7 @@ untilEvent.addEvent(window,'load',btnClick);
 untilEvent.addEvent(window,'load',play);
 untilEvent.addEvent(window,'load',getWarp);
 untilEvent.addEvent(window,'load',getOuter);
-untilEvent.addEvent(window,'load',getInfoMask);
+untilEvent.addEvent(window,'load',discussMask);
+untilEvent.addEvent(window,'load',collapse);
+//untilEvent.addEvent(window,'load',checkWidth);
+untilEvent.addEvent(window,'load',smallScreenList);
