@@ -1,0 +1,576 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
+}
+img{
+	vertical-align:middle;
+}
+ol,ul,h1,h2,h3,a{
+	list-style: none;
+	text-decoration: none;
+	font-weight: normal;
+}
+a:hover{
+	text-decoration: none;
+}
+.clearfix:after{
+	content: ".";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	height: 0;
+}
+header nav{
+	position: relative;
+	height: 50px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #272727;
+}
+header nav .myNav{
+	width: 95%;
+	margin: 0 auto;
+	height: 100%;
+}
+.myNav .logo{
+	float: left;
+}
+.myNav .logo img{
+	height: 50px;
+}
+/*.myNav .outer,.myNav .outer li{
+	display: none;
+	list-style: none;
+}*/
+.myNav .outer{
+	display: none;
+	list-style: none;
+}
+/*.myNav .outerList{
+	height: 50px;
+	line-height: 50px;
+
+}*/
+/*.myNav .outerList a{
+	display: block;
+	padding: 0 10px;
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+}*/
+/*.myNav .outerList .link span{
+	display: block;
+	height: 0;
+	width: 100%;
+	position: relative;
+	top: -7px;
+	left: 0;
+	background-color: #fff;
+
+}*/
+/*.myNav .outerList:hover .link span{
+	height: 1px;
+}*/
+/*.myNav .outerList .inter{
+	position: absolute;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	top: 50px;
+	right: 0;
+	background-color:#fff;
+	z-index: 2;
+}*/
+.myNav .outerList .inter li{
+	margin-top: 10px;
+	width: 130px;
+}
+.myNav .outerList .inter li a{
+	display: block;
+	color: #333;
+	font-size: 13px;
+	text-align: center;
+}
+/*.myNav .outerList .inter li a .chp,
+.myNav .outerList .inter li a .fw{
+	display: none;
+}*/
+/*.myNav .outerList .inter strong{
+	display:block;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+}*/
+.myNav .outerList .inter strong span{
+	border-right: 1px solid #333;
+	padding-right: 3px;
+	margin-right: 3px;
+}
+.myNav .userOp{
+	float: right;
+}
+.myNav .userOp li{
+	display: inline;
+	line-height: 50px;
+	
+}
+.myNav .userOp li a{
+	display: inline-block;
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	padding-left: 18px;
+}
+.myNav .userOp .denglu a{
+	background: url(../img/denglu.png) 0 17px no-repeat;
+	background-size: 16px;
+	margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+	background: url(../img/zhuce.png) 0 17px no-repeat;
+	background-size: 16px;
+}
+@media all and (min-width:768px){
+	header nav{
+	height: 64px;
+	}
+	header nav .myNav{
+		width: 85%;
+		height: 100%;
+	}
+	header nav .myNav{
+		text-align: center;
+	}
+	.myNav .logo{
+		display: block;
+	}
+	.myNav .logo img{
+		height: 64px;
+	}
+	.myNav .outerList .inter li{
+	margin-top: 20px;
+	width: 150px;
+	height: 115px;
+	border-right: 1px solid #333;
+}
+.myNav .outerList .inter li a .fw{
+	display: inline-block;
+	height: 105px;
+	background: url(../img/fw.png) no-repeat;
+}
+.myNav .outerList .inter li a .fw1{
+	width: 104px;
+	background-position: 0 0;
+}
+.myNav .outerList .inter li a .fw2{
+	width: 61px;
+	background-position: -112px 0;
+}
+.myNav .outerList .inter li a .fw3{
+	width: 76px;
+	background-position: -175px 0;
+}
+.myNav .outerList .inter li a .fw4{
+	width: 52px;
+	background-position: -250px 0;
+}
+.myNav .outerList .inter li a .chp{
+	display: inline-block;
+	height: 100px;
+	background: url(../img/chp.png) no-repeat;
+}
+.myNav .outerList .inter li a .chp1{
+	width: 59px;
+	background-position: 0 0;
+}
+.myNav .outerList .inter li a .chp2{
+	width: 59px;
+	background-position: -61px 0;
+}
+.myNav .outerList .inter li a .chp3{
+	width: 31px;
+	background-position: -123px 0;
+}
+.myNav .outerList .inter li a .chp4{
+	width: 55px;
+	background-position: -158px 0;
+}
+.myNav .outerList .inter strong{
+	display:block;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	margin-top: -20px;
+}
+	.myNav .outer,.myNav .outer li{
+		display: inline-block;
+	}
+	.myNav .outerList{
+	height: 64px;
+	line-height: 64px;
+	}
+	.myNav .outerList a{
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		padding: 0 15px;
+		font-size: 16px;
+	}
+	.myNav .userOp li{
+	display: inline;
+	line-height: 64px;
+	
+	}
+	.myNav .outerList .inter{
+	position: absolute;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	top: 60px;
+	right: 0;
+	background-color:#fff;
+	z-index: 2;
+}
+	.myNav .outerList .link span{
+	display: block;
+	height: 0;
+	width: 100%;
+	position: relative;
+	top: -10px;
+	left: 0;
+	background-color: #fff;
+
+}
+.myNav .outerList:hover .link span{
+	height: 1px;
+}
+	.myNav .userOp li a{
+	display: inline-block;
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	padding-left: 20px;
+	}
+	.myNav .userOp .denglu a{
+	background: url(../img/denglu.png) 0 22px no-repeat;
+	background-size: 20px;
+	margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+	background: url(../img/zhuce.png) 0 22px no-repeat;
+	background-size: 20px;
+	}
+}
+/*//轮播*/
+.warp{
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	margin: 0 auto;
+	top: 0px;
+}
+.warp .list{
+	position: relative;
+	width: 100%;
+}
+.warp .list li{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	list-style: none;
+	opacity: 1;
+}
+.warp .list li img{
+	width: 100%;
+}
+.pre,.next{
+	position: absolute;
+	top: 50%;
+	bottom: 0;
+	width: 32px;
+	height: 32px;
+	z-index: 10;
+	margin-top: -16px;
+	text-align: center;
+	line-height: 32px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 15px;
+	cursor: pointer;
+	background-color: transparent;
+}
+@media all and (min-width: 768px){
+	.pre,.next{
+		width: 64px;
+		height: 64px;
+		margin-top: -32px;
+		font-size: 30px;
+		line-height: 64px;
+	}
+}
+.pre{
+	left: 5px;
+	right: auto;
+}
+.next{
+	right:5px;
+	left: auto;
+}
+.pre:hover,.next:hover{
+	background-color: rgba(0,0,0,0.7);
+}
+.controll{
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+.controll ul{
+	text-align: center;
+}
+#controll li span.curIndex{
+	background-color: #000;
+}
+.controll li span{
+	display: inline-block;
+	padding:0;
+	margin: 0;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	background-color: #a7a7a7;
+	cursor: pointer;
+}
+.controll li{
+	display: inline-block;
+	margin-right: 5px;
+}
+.controll li span:hover{
+	background-color: #fefefe;
+}
+@media all and (min-width:768px){
+	.controll li span{
+	padding:0;
+	margin: 0;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background-color: #a7a7a7;
+	cursor: pointer;
+	}
+}
+/*轮播结束*/
+/*头部结束*/
+.smallScreen{
+	position: relative;
+	display: block;
+	height: 30px;
+	overflow: hidden;
+	margin: 20px 5px 0; 
+}
+.smallScreen .smallList .list{
+	position: relative;
+	float: left;
+	width: 50%;
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+	/*background-color:#9D9C9C;*/
+}
+.smallScreen .smallList .smallScInfo{
+	cursor: pointer;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+}
+.smallScreen .smallList .list a{
+	text-decoration: none;
+	color: #333;
+	font-size: 12px;
+}
+.smallScreen .smallList .list a strong{
+	font-weight: normal;
+	border-right: 1px solid #828181;
+	margin-right: 5px;
+	padding-right: 5px;
+}
+.smallScreen .smallList .list div{
+	height: 0;
+}
+.smallScreen .smallList .list div.bar{
+	position: absolute;
+	top: 25px;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	background: #333;
+}
+
+.smallScreen .smallList .list ul{
+	width: 200%;
+	text-align: left;
+}
+.smallScreen .smallList .chpList ul{
+	margin-left: 0;
+}
+.smallScreen .smallList .fwList ul{
+	margin-left: -100%;
+}
+.smallScreen .smallList .list .chpItem,
+.smallScreen .smallList .list .fwItem{
+	width: 50%;
+	float: left;
+	text-align: center;
+	/*padding-left:10%; */
+	margin-top: 10px;
+}
+.smallScreen .smallList .list .hide{
+	margin-left: -9000px;
+}
+.smallScreen .smallList .list span .icon{
+	display: inline-block;
+	width: 20px;
+	height: 13px;
+	background: url(../img/xiala.png) no-repeat;
+	margin-left: 3px;
+	vertical-align: middle;
+}
+.smallScreen .smallList .list .cur .icon{
+	display: inline-block;
+	width: 20px;
+	height: 13px;
+	background: url(../img/shangla.png) no-repeat;
+	margin-left: 3px;
+	vertical-align: middle;
+}
+@media screen and (min-width: 768px){
+	.smallScreen{
+		display: none;
+	}
+}
+.wholeActiveList .activeItem{
+	margin: 10px auto;
+}
+.wholeActiveList .activeItem a{
+	display: block;
+	text-align: center;
+}
+.wholeActiveList .activeItem img{
+	/*max-width: 100%;*/
+	width: 300px;
+}
+@media screen and (min-width: 630px) {
+	.wholeActiveList{
+		width: 630px;
+		margin: 0 auto;
+	}
+	.wholeActiveList .activeItem{
+		float: left;
+		/*margin-left: 15px;*/
+		margin: 10px 7px;
+	}
+}
+@media screen and (min-width: 945px){
+	.wholeActiveList{
+		width: 945px;
+	}
+}
+.footer{
+	height: 390px;
+	width: 100%;
+	background-color: #333;
+	margin-top: 30px;
+	padding-top: 30px;
+}
+.footer .exLink{
+	width: 258px;
+	margin: 0 auto;
+}
+.footer .exLink li{
+	position: relative;
+	float: left;
+	margin-right: 20px;
+}
+.footer .exLink a{
+	display: inline-block;
+	width: 66px;
+	height: 66px;
+	background: url(../img/exLink.png) no-repeat;
+}
+.footer .exLink .code{
+	position: absolute;
+	left: -33px;
+	top:-130px;
+	height: 130px;
+	width: 130px;
+	background: url(../img/2016-07-21T07-50-47.688Z.png) no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	opacity: 0;
+}
+.footer .exLink li.weixin:hover .code{
+	opacity: 1;
+}
+.footer .exLink .link3{
+	/*background: url(../img/weixin.png);*/
+	background-position: -130px 0;
+}
+.footer .exLink .link2{
+	/*background: url(../img/xinlang.png);*/
+	background-position: -65px 0;
+}
+.footer .exLink .link1{
+	/*background: url(../img/tieba.png);*/
+	background-position: 0 0;
+}
+.footer .help{
+	width: 100%;
+	text-align: center;
+}
+.footer .help .exHelp{
+	margin: 20px 5px;
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+	font-size: 16px;
+}
+.footer .help .exHelp ul{
+	margin-top: 8px;
+}
+.footer .help .exHelp ul  a{
+	color: #fff;
+	font-size: 13px;
+}
+.footer p{
+	font-size: 13px;
+	color: #fff;
+	text-align: center;
+	padding: 0 10px;
+	line-height: 1.5;
+	padding-bottom: 30px;
+	background-color: #333;
+}
+@media all and (min-width:768px) {
+	.footer .help{
+		width:600px;
+		margin: 0 auto;
+	
+	}
+	.footer .help .exHelp{
+		margin: 30px 20px;
+		float: left;
+	}
+	.footer p{
+		padding: 0;
+	}
+}
+.footer p span{
+	vertical-align: 3px;font-weight: bold;
+}

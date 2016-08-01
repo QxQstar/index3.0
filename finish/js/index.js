@@ -204,7 +204,7 @@ function scrollEvent(){
 	untilEvent.addEvent(window,"resize",function(){
 		throttle(setListHeight);
 		throttle(collapse);
-		throttle(checkWidth);
+		// throttle(checkWidth);
 	});
 }
 function throttle(method,context){
@@ -212,11 +212,16 @@ function throttle(method,context){
 	method.Tid = setTimeout(method,70);
 }
 // 轮播的函数结束
-function discussMask(){
+function addMask(){
 	$(".customer .word").hover(function(){
 		$(this).fadeTo(300,1);
 	},function(){
 		$(this).fadeTo(300,0);
+	});
+	$(".company").hover(function(){
+		$(".company").find(".mask").fadeTo(150,0.7);
+	},function(){
+		$(".company").find(".mask").fadeTo(150,0.3);
 	});
 }
 function collapse(){
@@ -243,19 +248,18 @@ function collapse(){
 // }
 function smallScreenList(){
 	var state = false;
-	// $('.smallScreen .list span').click(function(){
-	// 	state = true;
-	// 	$('.smallScreen .list span').removeClass('cur').addClass('hide');
-	// 	$(this).addClass("cur").next('ul').removeClass("hide");
-	// 	spread(state);
-	// });
 	$(document).click(function(event){
 		var state = false;
 		var target = event.target;
 		var targetName = target.nodeName.toLowerCase();
-		if(targetName == 'span' && $(target).parent()[0].nodeName.toLowerCase() == 'li'){
-			
-			if($(target).attr('class').indexOf('cur') >= 0){
+		var temp = null;
+		if(targetName == 'span' && $(target).parent()[0].nodeName.toLowerCase() == 'li' || targetName == 'i'){
+			if(targetName == 'span'){
+				temp = $(target);
+			}else{
+				temp = $(target).parent('span');
+			}
+			if(temp.attr('class').indexOf('cur') >= 0){
 				state = false;
 				$('.smallScreen .list span').prev('div').removeClass('bar');
 				$('.smallScreen .list span').removeClass('cur').next().addClass('hide');
@@ -263,10 +267,9 @@ function smallScreenList(){
 				state = true;
 				$('.smallScreen .list span').prev('div').removeClass('bar');
 				$('.smallScreen .list span').removeClass('cur').next().addClass('hide');
-				$(target).addClass("cur").next().removeClass("hide");
-				$(target).prev().addClass('bar');
+				temp.addClass("cur").next().removeClass("hide");
+				temp.prev().addClass('bar');
 			}
-			
 			spread(state);
 		}else{
 			state = false;
@@ -278,9 +281,9 @@ function smallScreenList(){
 }
 function spread(state){
 	if(state){
-		$('.smallScreen').animate({height:'80px'},500);
+		$('.smallScreen').animate({height:'90px'},500);
 	}else{
-		$('.smallScreen').animate({height:'20px'},500);
+		$('.smallScreen').animate({height:'30px'},500);
 	}
 }
 untilEvent.addEvent(window,'load',scrollEvent);
@@ -290,7 +293,7 @@ untilEvent.addEvent(window,'load',btnClick);
 untilEvent.addEvent(window,'load',play);
 untilEvent.addEvent(window,'load',getWarp);
 untilEvent.addEvent(window,'load',getOuter);
-untilEvent.addEvent(window,'load',discussMask);
+untilEvent.addEvent(window,'load',addMask);
 untilEvent.addEvent(window,'load',collapse);
 //untilEvent.addEvent(window,'load',checkWidth);
 untilEvent.addEvent(window,'load',smallScreenList);

@@ -1,0 +1,666 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
+}
+img{
+	vertical-align:middle;
+}
+ol,ul,h1,h2,h3,a{
+	list-style: none;
+	text-decoration: none;
+	font-weight: normal;
+}
+a:hover{
+	text-decoration: none;
+}
+.clearfix:after{
+	content: ".";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	height: 0;
+}
+header nav{
+	position: relative;
+	height: 50px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #272727;
+}
+header nav .myNav{
+	width: 95%;
+	margin: 0 auto;
+	height: 100%;
+}
+.myNav .logo{
+	float: left;
+}
+.myNav .logo img{
+	height: 50px;
+}
+.myNav .outer{
+	display: none;
+	list-style: none;
+}
+.myNav .outerList .inter li{
+	margin-top: 10px;
+	width: 130px;
+}
+.myNav .outerList .inter li a{
+	display: block;
+	color: #333;
+	font-size: 13px;
+	text-align: center;
+}
+.myNav .outerList .inter strong span{
+	border-right: 1px solid #333;
+	padding-right: 3px;
+	margin-right: 3px;
+}
+.myNav .userOp{
+	float: right;
+}
+.myNav .userOp li{
+	display: inline;
+	line-height: 50px;
+	
+}
+.myNav .userOp li a{
+	display: inline-block;
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	padding-left: 18px;
+}
+.myNav .userOp .denglu a{
+	background: url(../img/denglu.png) 0 17px no-repeat;
+	background-size: 16px;
+	margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+	background: url(../img/zhuce.png) 0 17px no-repeat;
+	background-size: 16px;
+}
+@media all and (min-width:768px){
+	header nav{
+	height: 64px;
+	}
+	header nav .myNav{
+		width: 85%;
+		height: 100%;
+	}
+	header nav .myNav{
+		text-align: center;
+	}
+	.myNav .logo{
+		display: block;
+	}
+	.myNav .logo img{
+		height: 64px;
+	}
+	.myNav .outerList .inter li{
+	margin-top: 20px;
+	width: 150px;
+	height: 115px;
+	border-right: 1px solid #333;
+}
+.myNav .outerList .inter li a .fw{
+	display: inline-block;
+	height: 105px;
+	background: url(../img/fw.png) no-repeat;
+}
+.myNav .outerList .inter li a .fw1{
+	width: 104px;
+	background-position: 0 0;
+}
+.myNav .outerList .inter li a .fw2{
+	width: 61px;
+	background-position: -112px 0;
+}
+.myNav .outerList .inter li a .fw3{
+	width: 76px;
+	background-position: -175px 0;
+}
+.myNav .outerList .inter li a .fw4{
+	width: 52px;
+	background-position: -250px 0;
+}
+.myNav .outerList .inter li a .chp{
+	display: inline-block;
+	height: 100px;
+	background: url(../img/chp.png) no-repeat;
+}
+.myNav .outerList .inter li a .chp1{
+	width: 59px;
+	background-position: 0 0;
+}
+.myNav .outerList .inter li a .chp2{
+	width: 59px;
+	background-position: -61px 0;
+}
+.myNav .outerList .inter li a .chp3{
+	width: 31px;
+	background-position: -123px 0;
+}
+.myNav .outerList .inter li a .chp4{
+	width: 55px;
+	background-position: -158px 0;
+}
+.myNav .outerList .inter strong{
+	display:block;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	margin-top: -20px;
+}
+	.myNav .outer,.myNav .outer li{
+		display: inline-block;
+	}
+	.myNav .outerList{
+	height: 64px;
+	line-height: 64px;
+	}
+	.myNav .outerList a{
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		padding: 0 15px;
+		font-size: 16px;
+	}
+	.myNav .userOp li{
+	display: inline;
+	line-height: 64px;
+	
+	}
+	.myNav .outerList .inter{
+	position: absolute;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	top: 60px;
+	right: 0;
+	background-color:#fff;
+	z-index: 2;
+}
+	.myNav .outerList .link span{
+	display: block;
+	height: 0;
+	width: 100%;
+	position: relative;
+	top: -10px;
+	left: 0;
+	background-color: #fff;
+
+}
+.myNav .outerList:hover .link span{
+	height: 1px;
+}
+	.myNav .userOp li a{
+	display: inline-block;
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	padding-left: 20px;
+	}
+	.myNav .userOp .denglu a{
+	background: url(../img/denglu.png) 0 22px no-repeat;
+	background-size: 20px;
+	margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+	background: url(../img/zhuce.png) 0 22px no-repeat;
+	background-size: 20px;
+	}
+}
+/*导航样式结束*/
+header .activeImg img{
+	width: 100%;
+	margin-top: -1px;
+}
+/*活动展示图片结束*/
+.activeDesc{
+	width: 100%;
+	background-color: #906B6B;
+	padding: 1.5% 0;
+}
+.activeDesc h1{
+	text-align: center;
+	font-size: 16px;
+	line-height: 2.0;
+}
+.activeDesc p{
+	text-indent: 2em;
+	width: 90%;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #EBE8E8;
+	line-height: 1.7;
+}
+@media screen and (min-width: 768px) {
+	.activeDesc p{
+		font-size: 16px;
+	}
+	.activeDesc h1{
+	font-size: 18px;
+	}
+}
+@media screen and (min-width: 992px) {
+	.activeDesc p{
+		width: 80%;
+		font-size: 18px;
+	}
+	.activeDesc h1{
+	font-size: 20px;
+	}
+}
+/*活动介绍结束*/
+/*切换*/
+.change{
+	width: 100%;
+	height: 400px;
+	margin: 20px auto 40px;
+}
+.change .warp{
+	position: relative;
+	height: 100%;
+	background: #333;
+}
+.change .warp .arrow,.change .warp .arrow{
+	display: none;
+}
+@media screen and (min-width: 768px){
+	.change{
+		width: 90%;
+		height: 480px;
+		margin: 2% auto 4%;
+	}
+	.change .warp .arrow,.change .warp .arrow{
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 17px;
+		height: 30px;
+		margin: auto 0;
+		background: url(../img/arrows.png) no-repeat;
+	}
+	.change .warp .arrow-right{
+		background-position:  0 -30px;
+		right: 10px;
+	}
+	.change .warp .arrow-left{
+		background-position:  0 0;
+		left: 10px;
+	}
+	.change .warp{
+		background: #333;
+		border: 4px solid #fff;
+		box-shadow: 0 0 5px #000;
+		border-radius: 20px;
+		padding: 30px 40px;
+	}
+}
+.change .warp .swiper-container{
+		background: #fff url(../img/2016052415513045.png) no-repeat center center;
+		height: 100%;
+	}
+@media screen and (min-width: 992px){
+	.change{
+		width: 80%;
+		max-width:1100px; 
+		height: 520px;
+	}
+	.change .warp{
+		padding: 3% 4%;
+	}
+}
+.change .warp .list,.change .warp .list .item{
+	position: relative;
+}
+.change .warp .list .item img{
+	position: absolute;
+	top:50%;
+	left:50%;
+}
+.change .customerSure{
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+}
+.change .customerSure .sale{
+	color: #fff;
+	font-size: 14px;
+	line-height: 2.0;
+	padding: 0.5% 1%;
+	border-radius: 3px;
+	background-color: #d10a0a;
+}
+.change .customerSure .price{
+	color: #D10A0A;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 1%;
+}
+.change .info{
+	text-align: center;
+	color: #000;
+}
+@media screen and (min-width: 768px){
+	.change .info{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		color: #fff;
+		font-size: 16px;
+	}
+	.change .info span{
+		line-height: 1.7;
+	}
+}
+@media screen and (min-width: 768px){
+	.change .customerSure .sale{
+		font-size: 16px;
+	}
+	.change .customerSure .price{
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 992px){
+	.change .customerSure .sale{
+		font-size: 18px;
+	}
+	.change .customerSure .price{
+		font-size: 18px;
+	}
+}
+/*往期回顾*/
+.oldActive .bar{
+	visibility: hidden;
+}
+@media screen and (min-width: 992px){
+	.oldActive .bar{
+		visibility: visible;
+		width: 80%;
+		margin: 0 auto;
+		height: 10px;
+		background: red;
+	}
+}
+.oldActive .title{
+	font-size: 16px;
+	text-align: center;
+	line-height: 2.0
+}
+@media screen and (min-width: 768px){
+	.oldActive .title{
+		font-size: 18px;
+	}
+}
+@media screen and (min-width: 992px){
+	.oldActive .title{
+		width: 20%;
+		font-size: 20px;
+		margin: 0 auto;
+		background-color: #fff;
+		margin-top: -25px;
+	}
+}
+.oldActive ul{
+	width: 90%;
+	margin: 0 auto;
+}
+@media screen and (min-width: 768px){
+	.oldActive ul{
+		width: 80%;
+	}
+}
+.oldActive ul .oldActiveItem{
+	float: left;
+	width: 100%;
+}
+@media screen and (min-width: 768px){
+	.oldActive ul .oldActiveItem{
+		width: 50%;
+		padding: 2%
+	}
+}
+@media screen and (min-width: 992px){
+	.oldActive ul .oldActiveItem{
+		width: 33.3333%;
+		padding: 1%;
+	}
+}
+.oldActive ul .oldActiveItem a{
+	display: block;
+}
+.oldActive ul .oldActiveItem img{
+		max-width:100%;
+	}
+
+.oldActive ul .oldActiveItem h3{
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+	line-height: 2;
+}
+@media screen and (min-width: 768px){
+	.oldActive ul .oldActiveItem h3{
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 992px){
+	.oldActive ul .oldActiveItem h3{
+		font-size: 18px;
+	}
+}
+/*页脚*/
+.footer{
+	height: 390px;
+	width: 100%;
+	background-color: #333;
+	margin-top: 30px;
+	padding-top: 30px;
+}
+.footer .exLink{
+	width: 258px;
+	margin: 0 auto;
+}
+.footer .exLink li{
+	position: relative;
+	float: left;
+	margin-right: 20px;
+}
+.footer .exLink a{
+	display: inline-block;
+	width: 66px;
+	height: 66px;
+	background: url(../img/exLink.png) no-repeat;
+}
+.footer .exLink .code{
+	position: absolute;
+	left: -33px;
+	top:-130px;
+	height: 130px;
+	width: 130px;
+	background: url(../img/2016-07-21T07-50-47.688Z.png) no-repeat;
+	background-size: 100%;
+	display: inline-block;
+	opacity: 0;
+}
+.footer .exLink li.weixin:hover .code{
+	opacity: 1;
+}
+.footer .exLink .link3{
+	/*background: url(../img/weixin.png);*/
+	background-position: -130px 0;
+}
+.footer .exLink .link2{
+	/*background: url(../img/xinlang.png);*/
+	background-position: -65px 0;
+}
+.footer .exLink .link1{
+	/*background: url(../img/tieba.png);*/
+	background-position: 0 0;
+}
+.footer .help{
+	width: 100%;
+	text-align: center;
+}
+.footer .help .exHelp{
+	margin: 20px 5px;
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+	font-size: 16px;
+}
+.footer .help .exHelp ul{
+	margin-top: 8px;
+}
+.footer .help .exHelp ul  a{
+	color: #fff;
+	font-size: 13px;
+}
+.footer p{
+	font-size: 13px;
+	color: #fff;
+	text-align: center;
+	padding: 0 10px;
+	line-height: 1.5;
+	padding-bottom: 30px;
+	background-color: #333;
+}
+@media all and (min-width:768px) {
+	.footer .help{
+		width:600px;
+		margin: 0 auto;
+	
+	}
+	.footer .help .exHelp{
+		margin: 30px 20px;
+		float: left;
+	}
+	.footer p{
+		padding: 0;
+	}
+}
+.footer p span{
+	vertical-align: 3px;font-weight: bold;
+}
+
+
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+	
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+/* ===============================================================
+Your custom styles, here you need to specify container's and slide's
+sizes, pagination, etc.
+================================================================*/
+.swiper-container {
+	/* Specify Swiper's Size: */
+
+	/*width:200px;
+	height: 100px;*/
+}
+.swiper-slide {
+	/* Specify Slides's Size: */
+	
+	/*width: 100%;
+	height: 100%;*/
+}
+.swiper-slide-active {
+	/* Specific active slide styling: */
+	
+}
+.swiper-slide-visible {
+	/* Specific visible slide styling: */	
+
+}
+/* ===============================================================
+Pagination Styles
+================================================================*/
+.swiper-pagination-switch {
+	/* Stylize pagination button: */	
+
+}
+.swiper-active-switch {
+	/* Specific active button style: */	
+	
+}
+.swiper-visible-switch {
+	/* Specific visible button style: */	
+	
+}
+
