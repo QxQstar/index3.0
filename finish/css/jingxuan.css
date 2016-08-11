@@ -1,224 +1,258 @@
 *{
-	padding: 0;
-	margin: 0;
-	box-sizing:border-box;
-	-moz-box-sizing:border-box; /* Firefox */
-	-webkit-box-sizing:border-box; /* Safari */
-	font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
 }
 img{
-	vertical-align:middle;
+    vertical-align:middle;
 }
 ol,ul,h1,h2,h3,a{
-	list-style: none;
-	text-decoration: none;
-	font-weight: normal;
+    list-style: none;
+    text-decoration: none;
+    font-weight: normal;
 }
 a:hover{
-	text-decoration: none;
+    text-decoration: none;
 }
 .clearfix:after{
-	content: ".";
-	display: block;
-	clear: both;
-	overflow: hidden;
-	height: 0;
+    content: ".";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
 }
 header nav{
-	position: relative;
-	height: 50px;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	background-color: #272727;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #272727;
 }
 header nav .myNav{
-	width: 95%;
-	margin: 0 auto;
-	height: 100%;
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
 }
 .myNav .logo{
-	float: left;
+    float: left;
 }
 .myNav .logo img{
-	height: 50px;
+    height: 50px;
 }
 .myNav .outer{
-	display: none;
-	list-style: none;
+    display: none;
+    list-style: none;
 }
 .myNav .outerList .inter li{
-	margin-top: 10px;
-	width: 130px;
+    margin-top: 10px;
+    width: 130px;
 }
 .myNav .outerList .inter li a{
-	display: block;
-	color: #333;
-	font-size: 13px;
-	text-align: center;
+    display: block;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
 }
 .myNav .outerList .inter strong span{
-	border-right: 1px solid #333;
-	padding-right: 3px;
-	margin-right: 3px;
+    border-right: 1px solid #333;
+    padding-right: 3px;
+    margin-right: 3px;
 }
 .myNav .userOp{
-	float: right;
+    float: right;
 }
 .myNav .userOp li{
-	display: inline;
-	line-height: 50px;
-	
-}
-.myNav .userOp li a{
-	display: inline-block;
-	color: #fff;
-	font-size: 13px;
-	text-decoration: none;
-	padding-left: 18px;
-}
-.myNav .userOp .denglu a{
-	background: url(../img/denglu.png) 0 17px no-repeat;
-	background-size: 16px;
-	margin-right: 10px;
-}
-.myNav .userOp .zhuce a{
-	background: url(../img/zhuce.png) 0 17px no-repeat;
-	background-size: 16px;
-}
-@media all and (min-width:768px){
-	header nav{
-	height: 64px;
-	}
-	header nav .myNav{
-		width: 85%;
-		height: 100%;
-	}
-	header nav .myNav{
-		text-align: center;
-	}
-	.myNav .logo{
-		display: block;
-	}
-	.myNav .logo img{
-		height: 64px;
-	}
-	.myNav .outerList .inter li{
-	margin-top: 20px;
-	width: 150px;
-	height: 115px;
-	border-right: 1px solid #333;
-}
-.myNav .outerList .inter li a .fw{
-	display: inline-block;
-	height: 105px;
-	background: url(../img/fw.png) no-repeat;
-}
-.myNav .outerList .inter li a .fw1{
-	width: 104px;
-	background-position: 0 0;
-}
-.myNav .outerList .inter li a .fw2{
-	width: 61px;
-	background-position: -112px 0;
-}
-.myNav .outerList .inter li a .fw3{
-	width: 76px;
-	background-position: -175px 0;
-}
-.myNav .outerList .inter li a .fw4{
-	width: 52px;
-	background-position: -250px 0;
-}
-.myNav .outerList .inter li a .chp{
-	display: inline-block;
-	height: 100px;
-	background: url(../img/chp.png) no-repeat;
-}
-.myNav .outerList .inter li a .chp1{
-	width: 59px;
-	background-position: 0 0;
-}
-.myNav .outerList .inter li a .chp2{
-	width: 59px;
-	background-position: -61px 0;
-}
-.myNav .outerList .inter li a .chp3{
-	width: 31px;
-	background-position: -123px 0;
-}
-.myNav .outerList .inter li a .chp4{
-	width: 55px;
-	background-position: -158px 0;
-}
-.myNav .outerList .inter strong{
-	display:block;
-	height: 25px;
-	line-height: 25px;
-	text-align: center;
-	margin-top: -20px;
-}
-	.myNav .outer,.myNav .outer li{
-		display: inline-block;
-	}
-	.myNav .outerList{
-	height: 64px;
-	line-height: 64px;
-	}
-	.myNav .outerList a{
-		display: block;
-		color: #fff;
-		text-decoration: none;
-		padding: 0 15px;
-		font-size: 16px;
-	}
-	.myNav .userOp li{
-	display: inline;
-	line-height: 64px;
-	
-	}
-	.myNav .outerList .inter{
-	position: absolute;
-	left: 0;
-	height: 0;
-	overflow: hidden;
-	top: 60px;
-	right: 0;
-	background-color:#fff;
-	z-index: 2;
-}
-	.myNav .outerList .link span{
-	display: block;
-	height: 0;
-	width: 100%;
-	position: relative;
-	top: -10px;
-	left: 0;
-	background-color: #fff;
+    display: inline;
+    line-height: 50px;
 
 }
-.myNav .outerList:hover .link span{
-	height: 1px;
+.myNav .userOp li a{
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    padding-left: 18px;
 }
-	.myNav .userOp li a{
-	display: inline-block;
-	color: #fff;
-	font-size: 13px;
-	text-decoration: none;
-	padding-left: 20px;
-	}
-	.myNav .userOp .denglu a{
-	background: url(../img/denglu.png) 0 22px no-repeat;
-	background-size: 20px;
-	margin-right: 10px;
+.myNav .userOp .denglu a{
+    background: url(../img/denglu.png) 0 17px no-repeat;
+    background-size: 16px;
+    margin-right: 10px;
 }
 .myNav .userOp .zhuce a{
-	background: url(../img/zhuce.png) 0 22px no-repeat;
-	background-size: 20px;
-	}
+    background: url(../img/zhuce.png) 0 17px no-repeat;
+    background-size: 16px;
+}
+@media all and (min-width:768px){
+    header nav{
+        height: 64px;
+    }
+    header nav .myNav{
+        width: 85%;
+        max-width: 1250px;
+        height: 100%;
+    }
+    header nav .myNav{
+        text-align: center;
+    }
+    .myNav .logo{
+        display: block;
+    }
+    .myNav .logo img{
+        height: 64px;
+    }
+    .myNav .outerList .inter li{
+        margin-top: 20px;
+        width: 150px;
+        height: 115px;
+        border-right: 1px solid #333;
+    }
+    .myNav .outerList .inter li a .menu{
+        display: inline-block;
+        height: 100px;
+        /*background: url(../img/menuDefault.png) no-repeat;*/
+        background: url(../img/menu2.png) no-repeat;
+    }
+    .myNav .outerList .inter li a .chp1{
+        width: 57px;
+        background-position: 0 0;
+    }
+    .myNav .outerList .inter li a .chp1:hover{
+        background-position: -627px 0;
+    }
+    .myNav .outerList .inter li a .chp2{
+        /*width: 56px;*/
+        width: 53px;
+        /*background-position: -57px 0;*/
+        background-position: -57px 0;
+    }
+    .myNav .outerList .inter li a .chp2:hover{
+        /*background-position: -684px 0;*/
+        background-position: -685px 0;
+    }
+    .myNav .outerList .inter li a .chp3{
+        width: 29px;
+        /*background-position: -113px;*/
+        background-position: -110px;
+    }
+    .myNav .outerList .inter li a .chp3:hover{
+        background-position: -740px 0;
+    }
+    .myNav .outerList .inter li a .chp4{
+        width: 100px;
+        /*background-position: -142px 0;*/
+        background-position: -139px 0;
+    }
+    .myNav .outerList .inter li a .chp4:hover{
+        background-position: -769px 0;
+    }
+    .myNav .outerList .inter li a .fw1{
+        width: 100px;
+        /*background-position: -242px 0;*/
+        background-position: -239px 0;
+    }
+    .myNav .outerList .inter li a .fw1:hover{
+        background-position: -869px 0;
+    }
+    .myNav .outerList .inter li a .fw2{
+        width: 100px;
+        /*background-position: -342px 0;*/
+        background-position: -339px 0;
+    }
+    .myNav .outerList .inter li a .fw2:hover{
+        /*background-position: -969px 0;*/
+        background-position: -971px 1px;
+    }
+    .myNav .outerList .inter li a .fw3{
+        width: 85px;
+        /*background-position: -442px 0;*/
+        background-position: -439px 0;
+    }
+    .myNav .outerList .inter li a .fw3:hover{
+        /*background-position: -1069px 0;*/
+        background-position: -1072px 1px;
+    }
+    .myNav .outerList .inter li a .fw4{
+        /*width: 100px;*/
+        width: 103px;
+        /*background-position: -527px 0;*/
+        background-position: -527px 0;
+    }
+    .myNav .outerList .inter li a .fw4:hover{
+        /*background-position: -1154px 0;*/
+        background-position: -1157px -1px;
+    }
+    .myNav .outerList .inter strong{
+        display:block;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    .myNav .outer,.myNav .outer li{
+        display: inline-block;
+    }
+    .myNav .outerList{
+        height: 64px;
+        line-height: 64px;
+    }
+    .myNav .outerList a{
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .myNav .userOp li{
+        display: inline;
+        line-height: 64px;
+
+    }
+    .myNav .outerList .inter{
+        position: absolute;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        top: 60px;
+        right: 0;
+        background-color:#fff;
+        z-index: 2;
+    }
+    .myNav .outerList .link span{
+        display: block;
+        height: 0;
+        width: 100%;
+        position: relative;
+        top: -10px;
+        left: 0;
+        background-color: #fff;
+
+    }
+    .myNav .outerList:hover .link span{
+        height: 1px;
+    }
+    .myNav .userOp li a{
+        display: inline-block;
+        color: #fff;
+        font-size: 13px;
+        text-decoration: none;
+        padding-left: 20px;
+    }
+    .myNav .userOp .denglu a{
+        background: url(../img/denglu.png) 0 22px no-repeat;
+        background-size: 20px;
+        margin-right: 10px;
+    }
+    .myNav .userOp .zhuce a{
+        background: url(../img/zhuce.png) 0 22px no-repeat;
+        background-size: 20px;
+    }
 }
 /*导航样式结束*/
-header .activeImg img{
+.activeImg img{
 	width: 100%;
 	margin-top: -1px;
 }
@@ -231,6 +265,7 @@ header .activeImg img{
 .activeDesc h1{
 	text-align: center;
 	font-size: 16px;
+    color: #EBE8E8;
 	line-height: 2.0;
 }
 .activeDesc p{
@@ -252,6 +287,7 @@ header .activeImg img{
 @media screen and (min-width: 992px) {
 	.activeDesc p{
 		width: 80%;
+		max-width: 1200px;
 		font-size: 18px;
 	}
 	.activeDesc h1{
@@ -263,7 +299,7 @@ header .activeImg img{
 .change{
 	width: 100%;
 	height: 400px;
-	margin: 20px auto 40px;
+	margin: 20px auto 30px;
 }
 .change .warp{
 	position: relative;
@@ -277,7 +313,7 @@ header .activeImg img{
 	.change{
 		width: 90%;
 		height: 480px;
-		margin: 2% auto 4%;
+		margin: 2% auto 2%;
 	}
 	.change .warp .arrow,.change .warp .arrow{
 		display: block;
@@ -298,15 +334,21 @@ header .activeImg img{
 		left: 10px;
 	}
 	.change .warp{
-		background: #333;
+		/*background: #c4a660;*/
+        /*background: #333;*/
+         background: url(../img/warp.jpg) repeat;
 		border: 4px solid #fff;
 		box-shadow: 0 0 5px #000;
 		border-radius: 20px;
 		padding: 30px 40px;
 	}
 }
+.change .warp .bg{
+    background-color: #fff;
+    height: 100%;
+}
 .change .warp .swiper-container{
-		background: #fff url(../img/2016052415513045.png) no-repeat center center;
+		background: url(../img/2016052415513045.png) no-repeat center center;
 		height: 100%;
 	}
 @media screen and (min-width: 992px){
@@ -318,6 +360,9 @@ header .activeImg img{
 	.change .warp{
 		padding: 3% 4%;
 	}
+    .change .warp .bg{
+        background: url(../img/changbj.jpg) repeat;
+    }
 }
 .change .warp .list,.change .warp .list .item{
 	position: relative;
@@ -326,6 +371,19 @@ header .activeImg img{
 	position: absolute;
 	top:50%;
 	left:50%;
+}
+.change .warp .item .head{
+	text-align: center;
+	font-size: 14px;
+}
+.change .warp .item .head span{
+	margin: 0 1px;
+}
+@media all and (min-width: 768px){
+	.change .warp .item .head{
+	font-size: 16px;
+	margin-top: 5px;
+	}
 }
 .change .customerSure{
 	text-align: center;
@@ -349,8 +407,12 @@ header .activeImg img{
 	margin-right: 1%;
 }
 .change .info{
+	font-size: 14px;
 	text-align: center;
 	color: #000;
+}
+.change .info span{
+	margin: 0 1px;
 }
 @media screen and (min-width: 768px){
 	.change .info{
@@ -381,6 +443,139 @@ header .activeImg img{
 		font-size: 18px;
 	}
 }
+/*详情*/
+.goodsDesc{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 3%;
+}
+.goodsDesc .title{
+	color: #222;
+	font-size: 16px;
+	line-height: 2.0;
+}
+@media all and (min-width: 768px){
+	.goodsDesc .title{
+	font-size: 18px;
+	}
+}
+.goodsDesc .desc{
+	margin: 0 auto;
+	margin-bottom: 2%;
+	width: 90%;
+	color: #555;
+	font-size: 15px;
+	line-height: 1.6;
+	text-align: left;
+}
+@media all and (min-width: 768px){
+	.goodsDesc .desc{
+		font-size: 16px;
+	}
+}
+@media all and (min-width: 992px){
+	.goodsDesc .desc{
+		width: 80%;
+		max-width: 1100px;
+	}
+}
+.goodsDesc ul{
+	margin: 0 auto;
+	width: 90%;
+}
+.goodsDesc .item img{
+	max-width: 100%;
+
+}
+@media all and (min-width: 992px){
+	.goodsDesc ul{
+		width: 80%;
+		max-width: 1100px;
+	}
+}
+.goodsDesc .isFold{
+	max-height: 300px;
+	overflow: hidden;
+}
+.goodsDesc .isSpread{
+	max-height: none;
+}
+
+.goodsDesc .All{
+	width: 90%;
+	margin: 0 auto;
+	background-color: #fff;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+	-webkit-transition: all 0.2s;
+	 -o-transition: all 0.2s;
+	 transition: all 0.2s; 
+}
+.goodsDesc .All .mask{
+	margin: 0 auto;
+	margin-top: -15px;
+	height: 15px;
+	background-color: #fff;
+	opacity: 0.2;
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
+	-webkit-transition: opacity 0.2s;
+	 -o-transition: opacity 0.2s;
+	 transition: opacity 0.2s; 
+	
+}
+.goodsDesc .All:hover{
+	box-shadow:none;
+}
+.goodsDesc .All:hover .mask{
+	opacity: 0;
+}
+.goodsDesc .All .more{
+	cursor: pointer;
+	display: block;
+	font-size: 16px;
+	color: #777;
+	height: 30px;
+	line-height: 30px;
+	-webkit-transition: all 0.2s;
+	 -o-transition: all 0.2s;
+	 transition: all 0.2s; 
+}
+@media all and (min-width:992px){
+	.goodsDesc .All{
+		width: 80%;
+		max-width: 1100px;
+	}
+}
+.goodsDesc .All span{
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 5px;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.goodsDesc .All .fold .foldBg{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    background: url('../img/spread.png');
+}
+.goodsDesc .All .spread{
+    display: none;
+}
+.goodsDesc .All .spread .spreadBg{
+    display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+	vertical-align: middle;
+	background: url("../img/fold.png") no-repeat;
+}
 /*往期回顾*/
 .oldActive .bar{
 	visibility: hidden;
@@ -388,7 +583,8 @@ header .activeImg img{
 @media screen and (min-width: 992px){
 	.oldActive .bar{
 		visibility: visible;
-		width: 80%;
+		width: 85%;
+		min-width: 1100px;
 		margin: 0 auto;
 		height: 10px;
 		background: red;
@@ -397,7 +593,7 @@ header .activeImg img{
 .oldActive .title{
 	font-size: 16px;
 	text-align: center;
-	line-height: 2.0
+	line-height: 2.0;
 }
 @media screen and (min-width: 768px){
 	.oldActive .title{
@@ -414,147 +610,141 @@ header .activeImg img{
 	}
 }
 .oldActive ul{
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 }
 @media screen and (min-width: 768px){
 	.oldActive ul{
-		width: 80%;
+		width: 90%;
+		max-width: 1200px;
 	}
 }
 .oldActive ul .oldActiveItem{
 	float: left;
-	width: 100%;
+	width: 50%;
+	padding: 0 5px;
+	margin-top: 10px;
 }
 @media screen and (min-width: 768px){
 	.oldActive ul .oldActiveItem{
-		width: 50%;
-		padding: 2%
+		width: 33.3333%;
+		padding: 0 5px;
 	}
 }
 @media screen and (min-width: 992px){
 	.oldActive ul .oldActiveItem{
-		width: 33.3333%;
-		padding: 1%;
+		width: 20%;
+		padding: 0 5px;
 	}
 }
 .oldActive ul .oldActiveItem a{
 	display: block;
+	text-align: center;
 }
 .oldActive ul .oldActiveItem img{
-		max-width:100%;
+		max-width: 100%;
 	}
-
-.oldActive ul .oldActiveItem h3{
-	text-align: center;
-	font-size: 14px;
-	color: #333;
-	line-height: 2;
-}
-@media screen and (min-width: 768px){
-	.oldActive ul .oldActiveItem h3{
-		font-size: 16px;
-	}
-}
-@media screen and (min-width: 992px){
-	.oldActive ul .oldActiveItem h3{
-		font-size: 18px;
-	}
-}
 /*页脚*/
 .footer{
-	height: 390px;
-	width: 100%;
-	background-color: #333;
-	margin-top: 30px;
-	padding-top: 30px;
+    height: 390px;
+    width: 100%;
+    background-color: #333;
+    margin-top: 30px;
+    padding-top: 30px;
 }
 .footer .exLink{
-	width: 258px;
-	margin: 0 auto;
+    width: 304px;
+    margin: 0 auto;
 }
 .footer .exLink li{
-	position: relative;
-	float: left;
-	margin-right: 20px;
+    position: relative;
+    float: left;
+    margin:0  5px;
+}
+@media all and (min-width: 360px){
+    .footer .exLink{
+        width: 344px;
+    }
+    .footer .exLink li{
+        margin: 0 10px;
+    }
 }
 .footer .exLink a{
-	display: inline-block;
-	width: 66px;
-	height: 66px;
-	background: url(../img/exLink.png) no-repeat;
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background: url(../img/exLink.png) no-repeat;
 }
 .footer .exLink .code{
-	position: absolute;
-	left: -33px;
-	top:-130px;
-	height: 130px;
-	width: 130px;
-	background: url(../img/2016-07-21T07-50-47.688Z.png) no-repeat;
-	background-size: 100%;
-	display: inline-block;
-	opacity: 0;
+    position: absolute;
+    left: -33px;
+    top:-130px;
+    height: 130px;
+    width: 130px;
+    background: url(../img/2016-07-21T07-50-47.688Z.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    opacity: 0;
 }
 .footer .exLink li.weixin:hover .code{
-	opacity: 1;
+    opacity: 1;
 }
 .footer .exLink .link3{
-	/*background: url(../img/weixin.png);*/
-	background-position: -130px 0;
+    background-position: -198px 0;
 }
 .footer .exLink .link2{
-	/*background: url(../img/xinlang.png);*/
-	background-position: -65px 0;
+    background-position: -132px 0;
 }
 .footer .exLink .link1{
-	/*background: url(../img/tieba.png);*/
-	background-position: 0 0;
+    background-position: -66px 0;
+}
+.footer .exLink .link0{
+    background-position: 0 0;
 }
 .footer .help{
-	width: 100%;
-	text-align: center;
+    width: 100%;
+    text-align: center;
 }
 .footer .help .exHelp{
-	margin: 20px 5px;
-	display: inline-block;
-	vertical-align: top;
-	color: #fff;
-	font-size: 16px;
+    margin: 20px 5px;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    font-size: 16px;
 }
 .footer .help .exHelp ul{
-	margin-top: 8px;
+    margin-top: 8px;
 }
 .footer .help .exHelp ul  a{
-	color: #fff;
-	font-size: 13px;
+    color: #fff;
+    font-size: 13px;
 }
 .footer p{
-	font-size: 13px;
-	color: #fff;
-	text-align: center;
-	padding: 0 10px;
-	line-height: 1.5;
-	padding-bottom: 30px;
-	background-color: #333;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.5;
+    padding-bottom: 30px;
+    background-color: #333;
 }
 @media all and (min-width:768px) {
-	.footer .help{
-		width:600px;
-		margin: 0 auto;
-	
-	}
-	.footer .help .exHelp{
-		margin: 30px 20px;
-		float: left;
-	}
-	.footer p{
-		padding: 0;
-	}
+    .footer .help{
+        width:600px;
+        margin: 0 auto;
+
+    }
+    .footer .help .exHelp{
+        margin: 30px 20px;
+        float: left;
+    }
+    .footer p{
+        padding: 0;
+    }
 }
 .footer p span{
-	vertical-align: 3px;font-weight: bold;
+    vertical-align: 3px;font-weight: bold;
 }
-
 
 .swiper-container {
 	margin:0 auto;

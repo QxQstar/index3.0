@@ -25,7 +25,6 @@ var untilEvent = {
 			return null;
 		}
 	}
-
 };
 function getOuter(){
 	var outer = document.getElementById('outer');
@@ -63,11 +62,6 @@ function callBackOut(event){
 }
 function callBackOver(event){
 	var totalHeight = 170;
-	// if($(window).width() >= 768){
-	// 	totalHeight = 170;
-	// }else{
-	// 	totalHeight = 100;
-	// }
 	var event = untilEvent.getEvent(event);
 	var target = untilEvent.getTarget(event);
 	var inter1 = document.getElementById('inter1');
@@ -106,16 +100,17 @@ function btnClick(){
 	untilEvent.addEvent(warp,'click',function(event){
 		var event = untilEvent.getEvent(event);
 		var target = untilEvent.getTarget(event);
-		if(target.nodeName.toLowerCase() == 'div'){
-			switch(target.id){
+        var targetName = target.nodeName.toLowerCase();
+		if(targetName == 'div' || targetName == "p"){
+			switch(target.className){
 				case 'pre': if(index == 1){
-						index = 4;
+						index = 3;
 					}else{
 						--index;
 					}
 					anmitate();
 					break;
-				case 'next':if(index == 4){
+				case 'next':if(index == 3){
 					index = 1;
 					}else{
 						++index;
@@ -123,7 +118,7 @@ function btnClick(){
 					anmitate();
 					break;
 			}
-		}else if(target.nodeName.toLowerCase() == 'span'){
+		}else if(targetName == 'span'){
 			index = target.getAttribute('data-index');
 			anmitate();
 		}
@@ -140,48 +135,23 @@ function removeClass(curIndex){
 		}
 	}
 }
-//减小图片透明度
-function decline(cur,inverTime,inverOpacity){
-	var opacityed = parseFloat(cur.style.opacity);
-	if (!opacityed) opacityed = 1;
-	if(opacityed > 0){
-		cur.style.opacity = opacityed-inverOpacity;
-		setTimeout(function(){
-			decline(cur,inverTime,inverOpacity);
-		},inverTime);
-	}
-}
 //切换图片的函数
-function anmitate(){
-	removeClass(index);
-	var list = document.getElementById('list');
-	var imgs = list.getElementsByTagName('img');
-	var imgsLen = imgs.length;
-	var whole = 300;//切换一张图片用的时间
-	var inverTime = 5;//时间间隔
-	var inverOpacity = 1/(whole/inverTime);
-	for(var i = 0;i<imgsLen;i++){
-		decline(imgs[i],inverTime,inverOpacity);
-	}
-	var go = function(){
-		var opacityed = parseFloat(imgs[index - 1].style.opacity);
-		if(!opacityed)opacityed = 0;
-		if(opacityed < 1){
-			var newOpacity = opacityed + inverOpacity;
-			if ( newOpacity > 1) {
-				imgs[index-1].style.opacity = 1;
-			}else{
-				imgs[index-1].style.opacity = newOpacity;
-			}
-			setTimeout(go,inverTime);
-		}
-	};
-	go();
+function anmitate() {
+    removeClass(index);
+    var list = $("#list");
+    var imgList = list.find("img");
+    imgList.each(function(cur,ele){
+        if(cur + 1 == index){
+            $(ele).animate({"opacity":"1"},700);
+        }else{
+            $(ele).animate({"opacity":"0"},700);
+        }
+    });
 }
 //自动切换函数
 function play() {
 	timer = setTimeout(function () {
-	if(index == 4){
+	if(index == 3){
 			index = 1;
 		}else{
 			++index;
@@ -204,7 +174,6 @@ function scrollEvent(){
 	untilEvent.addEvent(window,"resize",function(){
 		throttle(setListHeight);
 		throttle(collapse);
-		// throttle(checkWidth);
 	});
 }
 function throttle(method,context){
@@ -212,6 +181,7 @@ function throttle(method,context){
 	method.Tid = setTimeout(method,70);
 }
 // 轮播的函数结束
+//用户测评和公司介绍蒙层
 function addMask(){
 	$(".customer .word").hover(function(){
 		$(this).fadeTo(300,1);
@@ -219,11 +189,12 @@ function addMask(){
 		$(this).fadeTo(300,0);
 	});
 	$(".company").hover(function(){
-		$(".company").find(".mask").fadeTo(150,0.7);
+		$(".company").find(".mask").fadeTo(150,0.6);
 	},function(){
 		$(".company").find(".mask").fadeTo(150,0.3);
 	});
 }
+//用户晒单限定显示的字数
 function collapse(){
 	var p = $(".customer .word #p");
 	var offsetWidth = p.width();
@@ -238,14 +209,7 @@ function collapse(){
 		}
 	});
 }
-// function checkWidth(){
-// 	var width = $(window).width();
-// 	if(width >= 768){
-// 		$('.cupItem #chunse').attr('src',"../img/纯色.png");
-// 	}else{
-// 		$('.cupItem #chunse').attr('src',"../img/纯色2.png");
-// 	}
-// }
+//手机上产品和服务列表
 function smallScreenList(){
 	var state = false;
 	$(document).click(function(event){
@@ -269,6 +233,7 @@ function smallScreenList(){
 				$('.smallScreen .list span').removeClass('cur').next().addClass('hide');
 				temp.addClass("cur").next().removeClass("hide");
 				temp.prev().addClass('bar');
+                temp.parent('li').css("z-index","20").siblings('li').css("z-index","10");
 			}
 			spread(state);
 		}else{
@@ -279,12 +244,21 @@ function smallScreenList(){
 		}
 	});
 }
+//控制手机上产品和服务列表是显示还是折叠
 function spread(state){
 	if(state){
 		$('.smallScreen').animate({height:'90px'},500);
 	}else{
 		$('.smallScreen').animate({height:'30px'},500);
 	}
+}
+//动态为活动列表添加类
+function addClass(){
+    var activeList = $("#activeBar").find(".list li");
+    var moreList = $("<li class='activeItem moreActiveItem'><a href='#'><img src='../img/3213.jpg'></a></li>");
+    activeList.eq(3).before(moreList);
+    activeList.eq(3).addClass("otherActive").nextAll("li").addClass("otherActive");
+    $('#customer').find('li').last().addClass("lastItem");
 }
 untilEvent.addEvent(window,'load',scrollEvent);
 untilEvent.addEvent(window,'load',setListHeight);
@@ -295,5 +269,5 @@ untilEvent.addEvent(window,'load',getWarp);
 untilEvent.addEvent(window,'load',getOuter);
 untilEvent.addEvent(window,'load',addMask);
 untilEvent.addEvent(window,'load',collapse);
-//untilEvent.addEvent(window,'load',checkWidth);
 untilEvent.addEvent(window,'load',smallScreenList);
+untilEvent.addEvent(window,'load',addClass);

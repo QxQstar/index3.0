@@ -1,0 +1,224 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
+}
+img{
+	vertical-align:middle;
+}
+ol,ul,h1,h2,h3,a{
+	list-style: none;
+	text-decoration: none;
+	font-weight: normal;
+}
+a:hover{
+	text-decoration: none;
+}
+.clearfix:after{
+	content: ".";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	height: 0;
+}
+header nav{
+	position: relative;
+	height: 50px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #272727;
+}
+header nav .myNav{
+	width: 95%;
+	margin: 0 auto;
+	height: 100%;
+}
+.myNav .logo{
+	float: left;
+}
+.myNav .logo img{
+	height: 50px;
+}
+.myNav .outer{
+	display: none;
+	list-style: none;
+}
+.myNav .outerList .inter li{
+	margin-top: 10px;
+	width: 130px;
+}
+.myNav .outerList .inter li a{
+	display: block;
+	color: #333;
+	font-size: 13px;
+	text-align: center;
+}
+.myNav .outerList .inter strong span{
+	border-right: 1px solid #333;
+	padding-right: 3px;
+	margin-right: 3px;
+}
+.myNav .userOp{
+	float: right;
+}
+.myNav .userOp li{
+	display: inline;
+	line-height: 50px;
+	
+}
+.myNav .userOp li a{
+	display: inline-block;
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	padding-left: 18px;
+}
+.myNav .userOp .denglu a{
+	background: url(../img/denglu.png) 0 17px no-repeat;
+	background-size: 16px;
+	margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+	background: url(../img/zhuce.png) 0 17px no-repeat;
+	background-size: 16px;
+}
+@media all and (min-width:768px){
+	header nav{
+	height: 64px;
+	}
+	header nav .myNav{
+		width: 85%;
+		max-width: 1250px;
+		height: 100%;
+	}
+	header nav .myNav{
+		text-align: center;
+	}
+	.myNav .logo{
+		display: block;
+	}
+	.myNav .logo img{
+		height: 64px;
+	}
+	.myNav .outerList .inter li{
+	margin-top: 20px;
+	width: 150px;
+	height: 115px;
+	border-right: 1px solid #333;
+}
+.myNav .outerList .inter li a .fw{
+	display: inline-block;
+	height: 105px;
+	background: url(../img/fw.png) no-repeat;
+}
+.myNav .outerList .inter li a .fw1{
+	width: 104px;
+	background-position: 0 0;
+}
+.myNav .outerList .inter li a .fw2{
+	width: 61px;
+	background-position: -112px 0;
+}
+.myNav .outerList .inter li a .fw3{
+	width: 76px;
+	background-position: -175px 0;
+}
+.myNav .outerList .inter li a .fw4{
+	width: 52px;
+	background-position: -250px 0;
+}
+.myNav .outerList .inter li a .chp{
+	display: inline-block;
+	height: 100px;
+	background: url(../img/chp.png) no-repeat;
+}
+.myNav .outerList .inter li a .chp1{
+	width: 59px;
+	background-position: 0 0;
+}
+.myNav .outerList .inter li a .chp2{
+	width: 59px;
+	background-position: -61px 0;
+}
+.myNav .outerList .inter li a .chp3{
+	width: 31px;
+	background-position: -123px 0;
+}
+.myNav .outerList .inter li a .chp4{
+	width: 55px;
+	background-position: -158px 0;
+}
+.myNav .outerList .inter strong{
+	display:block;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	margin-top: -20px;
+}
+	.myNav .outer,.myNav .outer li{
+		display: inline-block;
+	}
+	.myNav .outerList{
+	height: 64px;
+	line-height: 64px;
+	}
+	.myNav .outerList a{
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		padding: 0 15px;
+		font-size: 16px;
+	}
+	.myNav .userOp li{
+	display: inline;
+	line-height: 64px;
+	
+	}
+	.myNav .outerList .inter{
+	position: absolute;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	top: 60px;
+	right: 0;
+	background-color:#fff;
+	z-index: 2;
+}
+	.myNav .outerList .link span{
+	display: block;
+	height: 0;
+	width: 100%;
+	position: relative;
+	top: -10px;
+	left: 0;
+	background-color: #fff;
+
+}
+.myNav .outerList:hover .link span{
+	height: 1px;
+}
+	.myNav .userOp li a{
+	display: inline-block;
+	color: #fff;
+	font-size: 13px;
+	text-decoration: none;
+	padding-left: 20px;
+	}
+	.myNav .userOp .denglu a{
+	background: url(../img/denglu.png) 0 22px no-repeat;
+	background-size: 20px;
+	margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+	background: url(../img/zhuce.png) 0 22px no-repeat;
+	background-size: 20px;
+	}
+}
+.showImg img{
+	width: 100%;
+	margin-top: -1px;
+}

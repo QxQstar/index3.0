@@ -1,0 +1,523 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
+}
+img{
+    vertical-align:middle;
+}
+ol,ul,h1,h2,h3,a{
+    list-style: none;
+    text-decoration: none;
+    font-weight: normal;
+}
+a:hover{
+    text-decoration: none;
+}
+.clearfix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+}
+header nav{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #272727;
+}
+header nav .myNav{
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+}
+.myNav .logo{
+    float: left;
+}
+.myNav .logo img{
+    height: 50px;
+}
+.myNav .outer{
+    display: none;
+    list-style: none;
+}
+.myNav .outerList .inter li{
+    margin-top: 10px;
+    width: 130px;
+}
+.myNav .outerList .inter li a{
+    display: block;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+}
+.myNav .outerList .inter strong span{
+    border-right: 1px solid #333;
+    padding-right: 3px;
+    margin-right: 3px;
+}
+.myNav .userOp{
+    float: right;
+}
+.myNav .userOp li{
+    display: inline;
+    line-height: 50px;
+
+}
+.myNav .userOp li a{
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    padding-left: 18px;
+}
+.myNav .userOp .denglu a{
+    background: url(../img/denglu.png) 0 17px no-repeat;
+    background-size: 16px;
+    margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+    background: url(../img/zhuce.png) 0 17px no-repeat;
+    background-size: 16px;
+}
+@media all and (min-width:768px){
+    header nav{
+        height: 64px;
+    }
+    header nav .myNav{
+        width: 85%;
+        max-width: 1250px;
+        height: 100%;
+    }
+    header nav .myNav{
+        text-align: center;
+    }
+    .myNav .logo{
+        display: block;
+    }
+    .myNav .logo img{
+        height: 64px;
+    }
+    .myNav .outerList .inter li{
+        margin-top: 20px;
+        width: 150px;
+        height: 115px;
+        border-right: 1px solid #333;
+    }
+    .myNav .outerList .inter li a .fw{
+        display: inline-block;
+        height: 105px;
+        background: url(../img/fw.png) no-repeat;
+    }
+    .myNav .outerList .inter li a .fw1{
+        width: 104px;
+        background-position: 0 0;
+    }
+    .myNav .outerList .inter li a .fw2{
+        width: 61px;
+        background-position: -112px 0;
+    }
+    .myNav .outerList .inter li a .fw3{
+        width: 76px;
+        background-position: -175px 0;
+    }
+    .myNav .outerList .inter li a .fw4{
+        width: 52px;
+        background-position: -250px 0;
+    }
+    .myNav .outerList .inter li a .chp{
+        display: inline-block;
+        height: 100px;
+        background: url(../img/chp.png) no-repeat;
+    }
+    .myNav .outerList .inter li a .chp1{
+        width: 59px;
+        background-position: 0 0;
+    }
+    .myNav .outerList .inter li a .chp2{
+        width: 59px;
+        background-position: -61px 0;
+    }
+    .myNav .outerList .inter li a .chp3{
+        width: 31px;
+        background-position: -123px 0;
+    }
+    .myNav .outerList .inter li a .chp4{
+        width: 55px;
+        background-position: -158px 0;
+    }
+    .myNav .outerList .inter strong{
+        display:block;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    .myNav .outer,.myNav .outer li{
+        display: inline-block;
+    }
+    .myNav .outerList{
+        height: 64px;
+        line-height: 64px;
+    }
+    .myNav .outerList a{
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .myNav .userOp li{
+        display: inline;
+        line-height: 64px;
+
+    }
+    .myNav .outerList .inter{
+        position: absolute;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        top: 60px;
+        right: 0;
+        background-color:#fff;
+        z-index: 2;
+    }
+    .myNav .outerList .link span{
+        display: block;
+        height: 0;
+        width: 100%;
+        position: relative;
+        top: -10px;
+        left: 0;
+        background-color: #fff;
+
+    }
+    .myNav .outerList:hover .link span{
+        height: 1px;
+    }
+    .myNav .userOp li a{
+        display: inline-block;
+        color: #fff;
+        font-size: 13px;
+        text-decoration: none;
+        padding-left: 20px;
+    }
+    .myNav .userOp .denglu a{
+        background: url(../img/denglu.png) 0 22px no-repeat;
+        background-size: 20px;
+        margin-right: 10px;
+    }
+    .myNav .userOp .zhuce a{
+        background: url(../img/zhuce.png) 0 22px no-repeat;
+        background-size: 20px;
+    }
+}
+/*导航结束*/
+
+/*侧边栏*/
+
+.navFixedTop{
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	height: 50px;
+	width: 100%;
+	color: #fff;
+	background-color: #000;
+}
+.navFixedTop .mask{
+	position: fixed;
+	z-index: 70;
+	display: none;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.6;
+}
+.navFixedTop .navContent{
+	width: 90%;
+	margin: 0 auto;
+}
+.navFixedTop .leftLogo{
+	float: left;
+}
+.navFixedTop .leftLogo img{
+	height: 50px;
+}
+.navFixedTop .rightNav{
+	float: right;
+}
+.navFixedTop .rightNav .show{
+	position: absolute;
+	z-index: 90;
+	top:14px;
+	right: 10%;
+}
+.navFixedTop .rightNav ul{
+	position: fixed;
+	z-index: 80;
+	right: -300px;
+	top: 0;
+	width: 260px;
+	height: 100%;
+	background-color: rgb(0,0,0);
+	padding-top: 70px;
+}
+.navFixedTop .rightNav ul li{
+	width: 85%;
+	height: 40px;
+	margin: 0 auto;
+	line-height: 40px;
+	padding-left: 30px;
+	border-bottom: 1px solid #444;
+}
+.navFixedTop .rightNav ul li.curLi{
+		list-style: disc inside;
+	}
+.navFixedTop .rightNav ul li a{
+	font-size: 16px;
+	color: #999;
+}
+.navFixedTop .rightNav ul li.curLi a{
+		color: #fff;
+	}
+.navFixedTop .rightNav ul li a:hover{
+	color: #fff;
+}
+.navFixedTop .rightNav .show span{
+	display: block;
+	height: 2px;
+	width: 30px;
+	margin-bottom: 5px;
+	background-color: #fff;
+}
+.navFixedTop .rightNav .show span.three{
+	display: none;
+}
+.navFixedTop .rightNav .show span.two{
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.navFixedTop .rightNav .show span.one
+{
+	-webkit-transform:  rotate(45deg) translate(4px, 5px) ;
+	transform: rotate(45deg) translate(4px ,5px)  ;
+}
+.navFixedSlide{
+	display: none;
+}
+.warpContent{
+	width: 90%;
+	max-width: 800px;
+	margin: 100px auto 0;
+}
+@media all and (min-width: 1100px){
+	.navFixedSlide{
+		position: fixed;
+		top: 0;
+		left: 50%;
+		display: block;
+		margin-top: 164px;
+		margin-left: -600px;
+		width:135px;
+	}
+	.navFixedSlide li{
+		height: 30px;
+		line-height: 30px;
+		width: 100%;
+		margin-bottom: 10px;
+		padding-left: 20px;
+		color: #000;
+	}
+	.navFixedSlide li a{
+		color: #000;
+		font: 16px "微软雅黑";
+	}
+	.navFixedSlide li.curLi{
+        list-style:circle ;
+	}
+	.navFixedTop{
+		display: none ;
+	}
+	.warpContent{
+		width: 70%;
+	}
+}
+.warpContent .contentList{
+	width: 100%;
+}
+.warpContent .contentList .content{
+	text-align: center;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+	border-bottom: #999 solid 7px;
+}
+.warpContent  .content p,
+.warpContent .content .info,
+.warpContent .content ul,
+.warpContent .content ol{
+	text-align: left;
+}
+.warpContent .contentList img{
+	max-width: 100%;
+	margin: 15px 0 ;
+}
+.warpContent .contentList h1{
+	font:30px "微软雅黑";
+	margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+.warpContent .contentList h2{
+	font: 24px "微软雅黑";
+	margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+.warpContent .contentList h3{
+	font: 20px "微软雅黑";
+	margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+.warpContent .contentList p,
+.warpContent .contentList .content li{
+	font: 15px "微软雅黑";
+	line-height: 2.0;
+    color: #313131;
+}
+.warpContent .contentList .content ul li{
+	list-style:disc inside;
+}
+.warpContent .contentList .content ol li{
+	list-style: decimal inside;
+}
+.warpContent .contentList .content .link li{
+	width: 30%;
+	float: left;
+	list-style: none;
+}
+.warpContent .contentList .content .link a{
+	color: #000;
+	display: block;
+	font: bold 15px "微软雅黑";
+}
+.warpContent .contentList .content8{
+	border-bottom: none;
+}
+.warpContent .contentList .content8 ul li{
+	list-style: none;
+}
+.warpContent  .content8 ul li .left{
+	float: left;
+}
+.warpContent  .content8 ul li .right{
+	margin-right: 20px;
+	float: right;
+	font-size: 13px;
+}
+.warpContent  .content8 ul li a{
+	color: #000;
+}
+.warpContent  .content8 ul li a:hover{
+	text-decoration: underline;
+}
+/*页脚*/
+.footer{
+    height: 390px;
+    width: 100%;
+    background-color: #333;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+.footer .exLink{
+    width: 258px;
+    margin: 0 auto;
+}
+.footer .exLink li{
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+.footer .exLink a{
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background: url(../img/exLink.png) no-repeat;
+}
+.footer .exLink .code{
+    position: absolute;
+    left: -33px;
+    top:-130px;
+    height: 130px;
+    width: 130px;
+    background: url(../img/2016-07-21T07-50-47.688Z.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    opacity: 0;
+}
+.footer .exLink li.weixin:hover .code{
+    opacity: 1;
+}
+.footer .exLink .link3{
+    /*background: url(../img/weixin.png);*/
+    background-position: -130px 0;
+}
+.footer .exLink .link2{
+    /*background: url(../img/xinlang.png);*/
+    background-position: -65px 0;
+}
+.footer .exLink .link1{
+    /*background: url(../img/tieba.png);*/
+    background-position: 0 0;
+}
+.footer .help{
+    width: 100%;
+    text-align: center;
+}
+.footer .help .exHelp{
+    margin: 20px 5px;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    font-size: 16px;
+}
+.footer .help .exHelp ul{
+    margin-top: 8px;
+}
+.footer .help .exHelp ul  a{
+    color: #fff;
+    font-size: 13px;
+}
+.footer p{
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.5;
+    padding-bottom: 30px;
+    background-color: #333;
+}
+@media all and (min-width:768px) {
+    .footer .help{
+        width:600px;
+        margin: 0 auto;
+
+    }
+    .footer .help .exHelp{
+        margin: 30px 20px;
+        float: left;
+    }
+    .footer p{
+        padding: 0;
+    }
+}
+.footer p span{
+    vertical-align: 3px;font-weight: bold;
+}
