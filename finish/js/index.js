@@ -172,7 +172,7 @@ function getWarp(){
 //函数节流
 function scrollEvent(){
 	untilEvent.addEvent(window,"resize",function(){
-		throttle(setListHeight);
+//		throttle(setListHeight);
 		throttle(collapse);
 	});
 }
@@ -261,7 +261,7 @@ function addClass(){
     $('#customer').find('li').last().addClass("lastItem");
 }
 untilEvent.addEvent(window,'load',scrollEvent);
-untilEvent.addEvent(window,'load',setListHeight);
+//untilEvent.addEvent(window,'load',setListHeight);
 untilEvent.addEvent(window,'load',setLiIndex);
 untilEvent.addEvent(window,'load',btnClick);
 untilEvent.addEvent(window,'load',play);

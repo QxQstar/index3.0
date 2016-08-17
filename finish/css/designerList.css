@@ -1,0 +1,406 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    font-family: arial,'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',sans-serif;
+}
+img{
+    vertical-align:middle;
+}
+ol,ul,h1,h2,h3,a{
+    list-style: none;
+    text-decoration: none;
+    font-weight: normal;
+}
+a:hover{
+    text-decoration: none;
+}
+.clearfix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0;
+}
+header nav{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #272727;
+}
+header nav .myNav{
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+}
+.myNav .logo{
+    float: left;
+}
+.myNav .logo img{
+    height: 50px;
+}
+.myNav .outer{
+    display: none;
+    list-style: none;
+}
+.myNav .outerList .inter li{
+    margin-top: 10px;
+    width: 130px;
+}
+.myNav .outerList .inter li a{
+    display: block;
+    color: #333;
+    font-size: 13px;
+    text-align: center;
+}
+.myNav .outerList .inter strong span{
+    border-right: 1px solid #333;
+    padding-right: 3px;
+    margin-right: 3px;
+}
+.myNav .userOp{
+    float: right;
+}
+.myNav .userOp li{
+    display: inline;
+    line-height: 50px;
+
+}
+.myNav .userOp li a{
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    padding-left: 18px;
+}
+.myNav .userOp .denglu a{
+    background: url(../img/denglu.png) 0 17px no-repeat;
+    background-size: 16px;
+    margin-right: 10px;
+}
+.myNav .userOp .zhuce a{
+    background: url(../img/zhuce.png) 0 17px no-repeat;
+    background-size: 16px;
+}
+@media all and (min-width:768px){
+    header nav{
+        height: 64px;
+    }
+    header nav .myNav{
+        width: 85%;
+        max-width: 1250px;
+        height: 100%;
+    }
+    header nav .myNav{
+        text-align: center;
+    }
+    .myNav .logo{
+        display: block;
+    }
+    .myNav .logo img{
+        height: 64px;
+    }
+    .myNav .outerList .inter li{
+        margin-top: 20px;
+        width: 150px;
+        height: 115px;
+        border-right: 1px solid #333;
+    }
+    .myNav .outerList .inter li a .menu{
+        display: inline-block;
+        height: 100px;
+        background: url(../img/menu2.png) no-repeat;
+    }
+    .myNav .outerList .inter li a .chp1{
+        width: 57px;
+        background-position: 0 0;
+    }
+    .myNav .outerList .inter li a .chp1:hover{
+        background-position: -627px 0;
+    }
+    .myNav .outerList .inter li a .chp2{
+        width: 53px;
+        background-position: -57px 0;
+    }
+    .myNav .outerList .inter li a .chp2:hover{
+        background-position: -685px 0;
+    }
+    .myNav .outerList .inter li a .chp3{
+        width: 29px;
+        background-position: -110px;
+    }
+    .myNav .outerList .inter li a .chp3:hover{
+        background-position: -740px 0;
+    }
+    .myNav .outerList .inter li a .chp4{
+        width: 100px;
+        background-position: -139px 0;
+    }
+    .myNav .outerList .inter li a .chp4:hover{
+        background-position: -769px 0;
+    }
+    .myNav .outerList .inter li a .fw1{
+        width: 100px;
+        background-position: -239px 0;
+    }
+    .myNav .outerList .inter li a .fw1:hover{
+        background-position: -869px 0;
+    }
+    .myNav .outerList .inter li a .fw2{
+        width: 100px;
+        background-position: -339px 0;
+    }
+    .myNav .outerList .inter li a .fw2:hover{
+        background-position: -971px 1px;
+    }
+    .myNav .outerList .inter li a .fw3{
+        width: 85px;
+        background-position: -439px 0;
+    }
+    .myNav .outerList .inter li a .fw3:hover{
+        background-position: -1072px 1px;
+    }
+    .myNav .outerList .inter li a .fw4{
+        width: 103px;
+        background-position: -527px 0;
+    }
+    .myNav .outerList .inter li a .fw4:hover{
+        background-position: -1157px -1px;
+    }
+    .myNav .outerList .inter strong{
+        display:block;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    /*.myNav .outer,.myNav .outer li{*/
+    /*display: inline-block;*/
+    /*}*/
+    .myNav .outer li{
+        display: inline-block;
+        width: 49%;
+    }
+    .myNav .outer{
+        display: inline-block;
+        width: 50%;
+    }
+
+    .myNav .outerList{
+        height: 64px;
+        line-height: 64px;
+    }
+    .myNav .outerList a{
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    .myNav .userOp li{
+        display: inline;
+        line-height: 64px;
+
+    }
+    .myNav .outerList .inter{
+        position: absolute;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        top: 60px;
+        right: 0;
+        background-color:#fff;
+        z-index: 2;
+    }
+    .myNav #outerList1 .link{
+        position: relative;
+        text-align: right;
+    }
+    .myNav #outerList2 .link{
+        position: relative;
+        text-align: left;
+    }
+    .myNav #outerList1 .link span{
+        display: block;
+        height: 0;
+        width: 2em;
+        position: absolute;
+        bottom: 7px;
+        right: 15px;
+        background-color: #fff;
+
+    }
+    .myNav #outerList2 .link span{
+        display: block;
+        height: 0;
+        width: 2em;
+        position: absolute;
+        bottom: 7px;
+        left: 15px;
+        background-color: #fff;
+
+    }
+
+    .myNav #outerList1:hover .link span{
+        height: 1px;
+    }
+    .myNav #outerList2:hover .link span{
+        height: 1px;
+    }
+    .myNav .userOp li a{
+        display: inline-block;
+        color: #fff;
+        font-size: 13px;
+        text-decoration: none;
+        padding-left: 20px;
+    }
+    .myNav .userOp .denglu a{
+        background: url(../img/denglu.png) 0 22px no-repeat;
+        background-size: 20px;
+        margin-right: 10px;
+    }
+    .myNav .userOp .zhuce a{
+        background: url(../img/zhuce.png) 0 22px no-repeat;
+        background-size: 20px;
+    }
+}
+/*头图*/
+.titlePic img{
+    width: 100%;
+    height:400px;
+    margin-top: -1px;
+}
+/*产品设计师列表*/
+@media all and (min-width: 768px) {
+    .prodDesi,.picDesi{
+        width: 95%;
+        margin: 40px auto;
+    }
+    .prodDesi .item{
+        width: 33.33%;
+        float: left;
+    }
+    .picDesi .item{
+        width: 25%;
+        float: left;
+    }
+    .prodDesi .item a,.picDesi .item a{
+        display: block;
+    }
+    .prodDesi .item a img,.picDesi .item a img{
+        max-width: 100%;
+    }
+}
+@media all and (min-width: 992px){
+    .prodDesi,.picDesi{
+        width: 80%;
+        max-width: 1000px;
+    }
+    .prodDesi .item a img,.picDesi .item a img{
+        width: 100%;
+    }
+}
+/*页脚*/
+.footer{
+    height: 390px;
+    width: 100%;
+    background-color: #333;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+.footer .exLink{
+    width: 304px;
+    margin: 0 auto;
+}
+.footer .exLink li{
+    position: relative;
+    float: left;
+    margin:0  5px;
+}
+@media all and (min-width: 360px){
+    .footer .exLink{
+        width: 344px;
+    }
+    .footer .exLink li{
+        margin: 0 10px;
+    }
+}
+.footer .exLink a{
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    background: url(../img/exLink.png) no-repeat;
+}
+.footer .exLink .code{
+    position: absolute;
+    left: -8000px;
+    top:-220px;
+    height: 226px;
+    width: 200px;
+    background: url(../img/weixin_erweima.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+}
+.footer .exLink li.weixin:hover .code{
+    left: -80px;
+}
+.footer .exLink .link3{
+    background-position: -198px 0;
+}
+.footer .exLink .link2{
+    background-position: -132px 0;
+}
+.footer .exLink .link1{
+    background-position: -66px 0;
+}
+.footer .exLink .link0{
+    background-position: 0 0;
+}
+.footer .help{
+    width: 100%;
+    text-align: center;
+}
+.footer .help .exHelp{
+    margin: 20px 5px;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    font-size: 16px;
+}
+.footer .help .exHelp ul{
+    margin-top: 8px;
+}
+.footer .help .exHelp ul  a{
+    color: #fff;
+    font-size: 13px;
+}
+.footer p{
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.5;
+    padding-bottom: 30px;
+    background-color: #333;
+}
+@media all and (min-width:768px) {
+    .footer .help{
+        width:600px;
+        margin: 0 auto;
+
+    }
+    .footer .help .exHelp{
+        margin: 30px 20px;
+        float: left;
+    }
+    .footer p{
+        padding: 0;
+    }
+}
+.footer p span{
+    vertical-align: 3px;font-weight: bold;
+}

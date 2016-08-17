@@ -302,6 +302,9 @@ header nav .myNav{
 	list-style: none;
 	opacity: 1;
 }
+.warp .list li.one{
+    position: relative;
+}
 .warp .list li img{
 	width: 100%;
 }
@@ -1177,17 +1180,16 @@ div.next p,div.pre p{
 }
 .footer .exLink .code{
 	position: absolute;
-	left: -80px;
+	left: -8000px;
 	top:-220px;
 	height: 226px;
 	width: 200px;
 	background: url(../img/weixin_erweima.png) no-repeat;
 	background-size: 100%;
 	display: inline-block;
-	opacity: 0;
 }
 .footer .exLink li.weixin:hover .code{
-	opacity: 1;
+	left: -80px;
 }
 .footer .exLink .link3{
 	background-position: -198px 0;
